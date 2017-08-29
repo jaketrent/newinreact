@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "precommit": "lint-staged",
     "dev": "next",
     "build": "next build",
     "start": "next start",
@@ -16,5 +17,16 @@
     "next": "^3.0.6",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "lint-staged": "^4.0.4",
+    "prettier": "^1.6.1"
+  },
+  "lint-staged": {
+    "*.js": [
+      "node_modules/.bin/prettier --single-quote --no-semi --write",
+      "git add"
+    ]
   }
 }
