@@ -28,13 +28,13 @@ export default _ => (
     @media screen and (min-width: 769px) {
       html,
       body {
-        font-size: 22px;
+        font-size: 20px;
       }
     }
     @media screen and (min-width: 1441px) {
       html,
       body {
-        font-size: 24px;
+        font-size: 22px;
       }
     }
   `}</style>

@@ -7,7 +7,7 @@ export default _ => (
         border-bottom: dotted 2px black;
         z-index: 10;
         position: relative;
-        margin: 0 -10px -20px -10px;
+        margin: 0 -10px -18px -10px;
       }
       .break {
         margin: 2px;

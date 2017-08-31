@@ -16,6 +16,11 @@ const Logo = _ => (
         background: black;
         border-radius: 50%;
       }
+      @media screen and (min-width: 769px) {
+        .logo {
+          width: 180%;
+        }
+      }
     `}</style>
   </svg>
 )
@@ -38,14 +43,15 @@ export default _ => (
         margin: 0;
       }
       .nuevo {
-        border: solid 7px red;
+        border: solid 7px #c91f06;
         border-radius: 266px 25px 55px 45px/25px 225px 95px 225px;
-        background: red;
+        background: #c91f06;
       }
       .react {
-        border: solid 7px #32cd32;
+        border: solid 7px #3bad24;
         border-radius: 10px 45px 525px 25px/25px 225px 25px 225px;
-        background: #32cd32;
+        background: #3bad24;
+        padding-bottom: 10px;
       }
       .in {
         font-size: 1.2em;
@@ -68,6 +74,26 @@ export default _ => (
       @media screen and (min-width: 769px) {
         .word-wrap {
           flex-direction: row;
+        }
+        .nuevo,
+        .react {
+          padding: 10px;
+          margin: 0 10px;
+        }
+        .in {
+          font-size: 0.8em;
+          padding: 0;
+        }
+        .in-wrap {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 400px;
+        }
+        .header {
+        }
+        .word-wrap {
         }
       }
     `}</style>

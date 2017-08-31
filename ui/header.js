@@ -6,6 +6,11 @@ export default props => (
       .header {
         margin: 20px 0;
       }
+      @media screen and (min-width: 769px) {
+        .header {
+          margin: 50px 0;
+        }
+      }
     `}</style>
   </div>
 )
