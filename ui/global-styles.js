@@ -3,6 +3,10 @@ export default _ => (
     * {
       box-sizing: border-box;
     }
+    @font-face {
+      font-family: 'TequilaSunset';
+      src: url('../static/TequilaSunset-Regular.otf') format('opentype');
+    }
     html,
     body {
       font-size: 16px;
@@ -10,6 +14,7 @@ export default _ => (
     h1,
     h2,
     h3 {
+      font-family: TequilaSunset;
     }
     a {
       text-decoration: none;
