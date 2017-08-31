@@ -11,26 +11,26 @@ export default _ => (
       name="author"
       content="https://plus.google.com/115032056022257436849"
     />
-    {/* <meta name="description" content="Compare approaches to CSS in React." />
+    {/* <meta name="description" content="" />
     <meta
       name="keywords"
-      content="styling react components, react stylesheets, radium, react css modules, css in js, external stylesheet with react"
+      content=""
     />
     <meta name="copyright" content={`${now()} Jake Trent`} />
 
-    <meta property="og:title" content="Styling React Components" />
+    <meta property="og:title" content="New in React" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://stylingreact.com" />
+    <meta property="og:url" content="https://newinreact.com" />
     <meta
       property="og:description"
-      content="Compare approaches to CSS in React."
+      content=""
     />
 
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Styling React" />
+    <meta name="twitter:title" content="New in React" />
     <meta
       name="twitter:description"
-      content="Compare approaches to CSS in React."
+      content=""
     />
     <meta name="twitter:site" content="@jaketrent" />
     <meta name="twitter:creator" content="@jaketrent" />
@@ -39,9 +39,6 @@ export default _ => (
     <meta name="MobileOptimized" content="320" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Libre+Franklin:400i,700"
-      rel="stylesheet"
-    /> */}
+    }*/}
   </Head>
 )
