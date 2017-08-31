@@ -19,6 +19,7 @@ export default _ => (
     a {
       text-decoration: none;
       cursor: pointer;
+      color: black;
     }
     p {
       line-height: 30px;
@@ -26,14 +27,12 @@ export default _ => (
     @media screen and (min-width: 426px) {
     }
     @media screen and (min-width: 769px) {
-      html,
-      body {
+      h1 {
         font-size: 20px;
       }
     }
     @media screen and (min-width: 1441px) {
-      html,
-      body {
+      h1 {
         font-size: 22px;
       }
     }
