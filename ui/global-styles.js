@@ -1,5 +1,5 @@
 export default _ => (
-  <style jsx>{`
+  <style global jsx>{`
     * {
       box-sizing: border-box;
     }
