@@ -77,11 +77,12 @@ export default _ => (
         }
         .nuevo,
         .react {
+          font-size: 4.1em;
           padding: 10px;
           margin: 0 10px;
         }
         .in {
-          font-size: 0.8em;
+          font-size: 1.3em;
           padding: 0;
         }
         .in-wrap {

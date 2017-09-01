@@ -1,4 +1,5 @@
 import BottomBorder from '../ui/bottom-border'
+import Changes from '../ui/changes'
 import Definition from '../ui/definition'
 import GlobalStyles from '../ui/global-styles'
 import Head from '../ui/head'
@@ -17,6 +18,8 @@ export default _ => (
       <Title />
       <BottomBorder />
     </Header>
+    <Tag />
+    <Changes />
 
     <Section>
       <Definition heading="Something" link="jaketrent.com">

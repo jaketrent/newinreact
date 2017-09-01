@@ -7,7 +7,7 @@ export default props => (
     </a>
     <style jsx>{`
       .heading {
-        font-size: 1em;
+        font-size: 1.3em;
       }
       span {
         text-decoration: underline;
