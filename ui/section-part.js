@@ -4,6 +4,7 @@ export default props => (
     <style jsx>{`
       .section-part {
         margin: auto;
+        width: 100%;
         max-width: 500px;
       }
       @media screen and (min-width: 769px) {

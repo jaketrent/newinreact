@@ -1,7 +1,7 @@
 import React from 'react'
 export default class extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.state = {
       isVideoCover: true
@@ -17,7 +17,7 @@ export default class extends React.Component {
             onClick={this._handleClick.bind(this)}
           />
         ) : (
-          <div className="video">
+          <div className="container">
             <iframe
               className="frame"
               width="560"
@@ -35,18 +35,18 @@ export default class extends React.Component {
           .video-cover {
             width: 100%;
           }
-          .video {
+          .container {
             position: relative;
+            width: 100%;
             height: 0;
             padding-bottom: 56.25%;
-            overflow: hidden;
           }
           .frame {
-            position: relative;
+            position: absolute;
             top: 0;
             left: 0;
-            height: auto;
-            width: auto;
+            height: 100%;
+            width: 100%;
           }
         `}</style>
       </div>
