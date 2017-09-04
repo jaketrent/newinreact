@@ -3,11 +3,11 @@ export default props => (
     {props.children}
     <style jsx>{`
       .section-part {
-        margin: auto;
+        margin: 0 auto;
         width: 100%;
         max-width: 500px;
       }
-      @media screen and (min-width: 769px) {
+      @media screen and (min-width: 900px) {
         .section-part {
           width: 30%;
         }

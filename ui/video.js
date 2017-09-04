@@ -31,6 +31,7 @@ export default class extends React.Component {
         <style jsx>{`
           .video-container {
             width: 100%;
+            margin-top: 4.2em;
           }
           .video-cover {
             width: 100%;

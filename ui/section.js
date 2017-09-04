@@ -7,9 +7,12 @@ export default props => (
         display: flex;
         flex-direction: column;
       }
-      @media screen and (min-width: 769px) {
+      @media screen and (min-width: 900px) {
         .section {
           flex-direction: row;
+          max-width: 1650px;
+          margin: auto;
+          algn-items: flex-start;
         }
       }
     `}</style>

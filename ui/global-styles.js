@@ -10,6 +10,7 @@ export default _ => (
     html,
     body {
       font-size: 16px;
+      font-family: sans-serif;
     }
     h1,
     h2,
