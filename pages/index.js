@@ -1,5 +1,6 @@
 import BottomBorder from '../ui/bottom-border'
 import Changes from '../ui/changes'
+import Content from '../ui/content'
 import Definition from '../ui/definition'
 import Diff from '../ui/diff'
 import GlobalStyles from '../ui/global-styles'
@@ -12,7 +13,7 @@ import TopBorder from '../ui/top-border'
 import Video from '../ui/video'
 
 export default _ => (
-  <div>
+  <Content>
     <Head />
     <GlobalStyles />
     <Header>
@@ -59,5 +60,5 @@ export default _ => (
         </Section.Part>
       </Section.Content>
     </Section>
-  </div>
+  </Content>
 )

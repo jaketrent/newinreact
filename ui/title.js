@@ -1,3 +1,5 @@
+import media from './media'
+
 const Logo = _ => (
   <svg
     className="logo"
@@ -16,7 +18,7 @@ const Logo = _ => (
         background: black;
         border-radius: 50%;
       }
-      @media screen and (min-width: 769px) {
+      @media screen and (${media.medium}) {
         .logo {
           width: 180%;
         }
@@ -71,13 +73,13 @@ export default _ => (
         margin: auto;
         text-align: center;
       }
-      @media screen and (min-width: 769px) {
+      @media screen and (${media.medium}) {
         .word-wrap {
           flex-direction: row;
         }
         .nuevo,
         .react {
-          font-size: 4.1em;
+          font-size: 2.75em;
           padding: 10px;
           margin: 0 10px;
         }

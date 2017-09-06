@@ -1,3 +1,5 @@
+import media from './media'
+
 export default _ => (
   <style global jsx>{`
     * {
@@ -7,8 +9,7 @@ export default _ => (
       font-family: 'TequilaSunset';
       src: url('../static/TequilaSunset-Regular.otf') format('opentype');
     }
-    html,
-    body {
+    html {
       font-size: 16px;
       font-family: sans-serif;
     }
@@ -23,18 +24,16 @@ export default _ => (
       color: black;
     }
     p {
-      line-height: 30px;
+      line-height: 1.5em;
     }
-    @media screen and (min-width: 426px) {
-    }
-    @media screen and (min-width: 769px) {
-      h1 {
-        font-size: 20px;
+    @media screen and (${media.medium}) {
+      html {
+        font-size: 18px;
       }
     }
-    @media screen and (min-width: 1441px) {
-      h1 {
-        font-size: 22px;
+    @media screen and (${media.large}) {
+      html {
+        font-size: 20px;
       }
     }
   `}</style>

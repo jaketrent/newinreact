@@ -30,13 +30,13 @@ Section.Part = props => (
 )
 
 Section.Heading = props => (
-  <h3 className="heading">
+  <h2 className="heading">
     <a className="link" href={['#' + props.id]}>
       {props.children}
     </a>
     <style jsx>{`
       .heading {
-        font-size: 1.3em;
+        font-size: 1.5em;
         margin: 0 auto;
         width: 100%;
       }
@@ -54,7 +54,7 @@ Section.Heading = props => (
         }
       }
     `}</style>
-  </h3>
+  </h2>
 )
 
 Section.Content = props => (

@@ -4,8 +4,8 @@ export default _ => (
     <style jsx>{`
       .changes {
         text-align: center;
-        margin: 1.4em 0;
-        font-size: 1.8em;
+        margin: 2em 0;
+        font-size: 2em;
       }
     `}</style>
   </h2>
