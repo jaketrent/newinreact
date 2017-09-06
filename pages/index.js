@@ -1,26 +1,19 @@
-import BottomBorder from '../ui/bottom-border'
 import Changes from '../ui/changes'
 import Content from '../ui/content'
 import Definition from '../ui/definition'
 import Diff from '../ui/diff'
 import GlobalStyles from '../ui/global-styles'
 import Head from '../ui/head'
-import Header from '../ui/header'
 import Section from '../ui/section'
 import Tag from '../ui/tag'
 import Title from '../ui/title'
-import TopBorder from '../ui/top-border'
 import Video from '../ui/video'
 
 export default _ => (
   <Content>
     <Head />
     <GlobalStyles />
-    <Header>
-      <TopBorder />
-      <Title />
-      <BottomBorder />
-    </Header>
+    <Title />
     <Tag />
     <Changes />
 

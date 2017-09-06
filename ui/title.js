@@ -14,21 +14,21 @@ const Logo = _ => (
     <style jsx>{`
       .logo {
         fill: white;
-        width: 25%;
+        max-width: 64px;
         background: black;
         border-radius: 50%;
       }
       @media screen and (${media.medium}) {
         .logo {
-          width: 180%;
+          max-width: 84px;
         }
       }
     `}</style>
   </svg>
 )
 
-export default _ => (
-  <header className="header">
+const Text = _ => (
+  <header className="text">
     <h1 className="word-wrap">
       <div className="nuevo">Nuevo</div>
       <div className="in-wrap">
@@ -39,48 +39,47 @@ export default _ => (
     </h1>
 
     <style jsx>{`
+      .word-wrap {
+        padding: 0 48px;
+      }
       .nuevo,
       .react {
         font-size: 2em;
         margin: 0;
       }
       .nuevo {
+        display: inline-block;
         border: solid 7px #c91f06;
         border-radius: 266px 25px 55px 45px/25px 225px 95px 225px;
         background: #c91f06;
       }
       .react {
+        display: inline-block;
         border: solid 7px #3bad24;
         border-radius: 10px 45px 525px 25px/25px 225px 25px 225px;
         background: #3bad24;
         padding-bottom: 10px;
       }
       .in {
-        font-size: 1.2em;
+        font-size: 0.75em;
       }
       .in-wrap {
         display: flex;
         flex-direction: column;
         align-items: center;
-      }
-      .header {
-      }
-      .word-wrap {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        max-width: 420px;
-        margin: auto;
-        text-align: center;
+        margin: 0.25em 0;
       }
       @media screen and (${media.medium}) {
         .word-wrap {
-          flex-direction: row;
+          display: flex;
+          justify-content: center;
+          margin: 0 auto;
+          padding: 0 10px;
         }
         .nuevo,
         .react {
-          font-size: 2.75em;
-          padding: 10px;
+          font-size: 2em;
+          padding: 0.375em 24px;
           margin: 0 10px;
         }
         .in {
@@ -92,13 +91,114 @@ export default _ => (
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          width: 400px;
+          margin: 0 24px;
         }
-        .header {
-        }
-        .word-wrap {
+      }
+      @media screen and (${media.large}) {
+        .nuevo,
+        .react {
+          font-size: 2.5em;
         }
       }
     `}</style>
   </header>
+)
+
+const Dotted = _ => (
+  <div className="dotted">
+    <style jsx>{`
+      .dotted {
+        margin: 3px;
+        height: 3px;
+        background-image: linear-gradient(
+          to right,
+          black 25%,
+          rgba(255, 255, 255, 0) 0%
+        );
+        background-position: top;
+        background-size: 8px 2px;
+        background-repeat: repeat-x;
+      }
+    `}</style>
+  </div>
+)
+
+const Solid = _ => (
+  <div className="solid">
+    <style jsx>{`
+      .solid {
+        height: 1px;
+        background: black;
+      }
+    `}</style>
+  </div>
+)
+
+const TopBorder = props => (
+  <div className="top">
+    {props.children}
+    <style jsx>{`
+      .top {
+        position: relative;
+        bottom: -32px;
+      }
+    `}</style>
+  </div>
+)
+
+const BottomBorder = props => (
+  <div className="bottom">
+    {props.children}
+    <style jsx>{`
+      .bottom {
+        position: relative;
+        top: -32px;
+      }
+    `}</style>
+  </div>
+)
+
+/*
+ position: relative;
+ margin: 0 auto -21px auto;
+
+   <TopBorder>
+   <Solid />
+   <Dotted />
+   </TopBorder>
+   <Text />
+   <BottomBorder>
+   <Dotted />
+   <Solid />
+   </BottomBorder>
+   */
+export default props => (
+  <div className="container">
+    <div className="title">
+      <TopBorder>
+        <Solid />
+        <Dotted />
+      </TopBorder>
+      <Text />
+      <BottomBorder>
+        <Dotted />
+        <Solid />
+      </BottomBorder>
+    </div>
+    <style jsx>{`
+      .container {
+        text-align: center;
+      }
+      .title {
+        display: inline-block;
+        margin: 20px auto;
+        overflow: hidden;
+      }
+      @media screen and (${media.medium}) {
+        .title {
+          margin: 50px auto;
+        }
+      }
+    `}</style>
+  </div>
 )
