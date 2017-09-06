@@ -6,7 +6,6 @@ import GlobalStyles from '../ui/global-styles'
 import Head from '../ui/head'
 import Header from '../ui/header'
 import Section from '../ui/section'
-import SectionPart from '../ui/section-part'
 import Tag from '../ui/tag'
 import Title from '../ui/title'
 import TopBorder from '../ui/top-border'
@@ -24,20 +23,24 @@ export default _ => (
     <Tag />
     <Changes />
 
-    <Section id="first">
-      <SectionPart>
-        <Definition heading="Something" link="jaketrent.com">
-          Lorem ipsum dolor sit amet, sit case soleat ea, no mei aperiam
-          indoctum constituto, mel summo disputationi et. Ei homero graecis
-          rationibus has, te idque ornatus suavitate qui. Eu vide malis oratio
-          eam, illud modus interesset vix te, nibh assentior pri no. Has ex
-          purto patrioque aliquando, in suscipit nominati est. Id alienum
-          suscipiantur ius, est ipsum praesent suavitate ne.
-        </Definition>
-      </SectionPart>
-      <SectionPart>
-        <Diff
-          raw={`
+    <Section>
+      <Section.Heading id="first">
+        Prop Types Moved to Separate Package
+      </Section.Heading>
+      <Section.Content>
+        <Section.Part>
+          <Definition link="jaketrent.com">
+            Lorem ipsum dolor sit amet, sit case soleat ea, no mei aperiam
+            indoctum constituto, mel summo disputationi et. Ei homero graecis
+            rationibus has, te idque ornatus suavitate qui. Eu vide malis oratio
+            eam, illud modus interesset vix te, nibh assentior pri no. Has ex
+            purto patrioque aliquando, in suscipit nominati est. Id alienum
+            suscipiantur ius, est ipsum praesent suavitate ne.
+          </Definition>
+        </Section.Part>
+        <Section.Part>
+          <Diff
+            raw={`
  export default props => (
 -  <section className="section">
 +  <section className="section" id={props.id}>
@@ -46,43 +49,15 @@ export default _ => (
 +    </span>
      {props.children}
 `}
-        />
-      </SectionPart>
-      <SectionPart>
-        <Video
-          img="https://lorempixel.com/500/250/cats"
-          video="https://www.youtube.com/embed/b6VyUAwslZM?rel=0"
-        />
-      </SectionPart>
-    </Section>
-
-    <Section id="second">
-      <SectionPart>
-        <Definition heading="Else" link="jaketrent.com">
-          Lorem ipsum dolor sit amet, sit case soleat ea, no mei aperiam
-          indoctum constituto, mel summo disputationi et. Ei homero graecis
-          rationibus has, te idque ornatus suavitate qui. Eu vide malis oratio
-          eam, illud modus interesset vix te, nibh assentior pri no. Has ex
-          purto patrioque aliquando, in suscipit nominati est. Id alienum
-          suscipiantur ius, est ipsum praesent suavitate ne.
-        </Definition>
-      </SectionPart>
-      <SectionPart>
-        <Definition heading="Else" link="jaketrent.com">
-          Lorem ipsum dolor sit amet, sit case soleat ea, no mei aperiam
-          indoctum constituto, mel summo disputationi et. Ei homero graecis
-          rationibus has, te idque ornatus suavitate qui. Eu vide malis oratio
-          eam, illud modus interesset vix te, nibh assentior pri no. Has ex
-          purto patrioque aliquando, in suscipit nominati est. Id alienum
-          suscipiantur ius, est ipsum praesent suavitate ne.
-        </Definition>
-      </SectionPart>
-      <SectionPart>
-        <Video
-          img="https://lorempixel.com/500/250/cats"
-          video="https://www.youtube.com/embed/b6VyUAwslZM?rel=0"
-        />
-      </SectionPart>
+          />
+        </Section.Part>
+        <Section.Part>
+          <Video
+            img="https://lorempixel.com/500/250/cats"
+            video="https://www.youtube.com/embed/b6VyUAwslZM?rel=0"
+          />
+        </Section.Part>
+      </Section.Content>
     </Section>
   </div>
 )
