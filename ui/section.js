@@ -1,3 +1,5 @@
+import media from './media'
+
 const Section = props => (
   <div>
     {props.children}
@@ -14,12 +16,13 @@ Section.Part = props => (
     {props.children}
     <style jsx>{`
       .section-part {
-        margin: 0 auto;
+        margin: 2em auto;
         width: 100%;
       }
-      @media screen and (min-width: 1024px) {
+      @media screen and (${media.medium}) {
         .section-part {
           flex: 1;
+          margin: 0;
         }
         .section-part + .section-part {
           margin-left: 2em;
@@ -48,9 +51,9 @@ Section.Heading = props => (
         position: absolute;
         left: -1.5em;
       }
-      @media screen and (min-width: 1024px) {
+      @media screen and (${media.medium}) {
         .heading {
-          max-width: 100%;
+          margin-bottom: 1.5em;
         }
       }
     `}</style>

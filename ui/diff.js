@@ -49,7 +49,6 @@ export default props => (
     </pre>
     <style jsx>{`
       .diff {
-        margin-top: 4.2em;
         border: 3px solid black;
         overflow: scroll;
         overflow-y: hidden;

@@ -8,6 +8,12 @@ export default props => (
       span {
         text-decoration: underline;
       }
+      p {
+        margin: 0;
+      }
+      p + p {
+        margin: 1.5em 0;
+      }
     `}</style>
   </div>
 )
