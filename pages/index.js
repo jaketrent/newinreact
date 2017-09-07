@@ -5,6 +5,7 @@ import Diff from '../ui/diff'
 import GlobalStyles from '../ui/global-styles'
 import Head from '../ui/head'
 import Section from '../ui/section'
+import Subscribe from '../ui/subscribe'
 import Tag from '../ui/tag'
 import Title from '../ui/title'
 import Video from '../ui/video'
@@ -53,5 +54,6 @@ export default _ => (
         </Section.Part>
       </Section.Content>
     </Section>
+    <Subscribe />
   </Content>
 )
