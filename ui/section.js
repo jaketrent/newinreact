@@ -23,6 +23,28 @@ Section.Part = props => (
   </div>
 )
 
+Section.Part2 = props => (
+  <div className="section-part">
+    <Section.Heading>{props.title}</Section.Heading>
+    {props.children}
+    <style jsx>{`
+      .section-part {
+        margin: 2em auto;
+        width: 100%;
+      }
+      @media screen and (${media.large}) {
+        .section-part {
+          flex: 1;
+          margin: 0;
+        }
+        .section-part + .section-part {
+          margin-left: 2em;
+        }
+      }
+    `}</style>
+  </div>
+)
+
 Section.Heading = props => (
   <h2 className="heading">
     <a className="link" href={['#' + props.id]}>

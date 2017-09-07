@@ -4,6 +4,8 @@ import Definition from '../ui/definition'
 import Diff from '../ui/diff'
 import GlobalStyles from '../ui/global-styles'
 import Head from '../ui/head'
+import Image from '../ui/image'
+import Link from '../ui/link'
 import Section from '../ui/section'
 import Subscribe from '../ui/subscribe'
 import Tag from '../ui/tag'
@@ -24,13 +26,14 @@ export default _ => (
       </Section.Heading>
       <Section.Content>
         <Section.Part>
-          <Definition link="jaketrent.com">
+          <Definition>
             Lorem ipsum dolor sit amet, sit case soleat ea, no mei aperiam
             indoctum constituto, mel summo disputationi et. Ei homero graecis
             rationibus has, te idque ornatus suavitate qui. Eu vide malis oratio
             eam, illud modus interesset vix te, nibh assentior pri no. Has ex
             purto patrioque aliquando, in suscipit nominati est. Id alienum
             suscipiantur ius, est ipsum praesent suavitate ne.
+            <Link href="https:/jaketrent.com">Official Docs</Link>
           </Definition>
         </Section.Part>
         <Section.Part>
@@ -51,6 +54,27 @@ export default _ => (
             img="../static/test.png"
             video="https://www.youtube.com/embed/b6VyUAwslZM?rel=0"
           />
+        </Section.Part>
+      </Section.Content>
+    </Section>
+
+    <Section>
+      <Section.Content>
+        <Section.Part2 title="The Project">
+          <Definition>
+            Lorem ipsum dolor sit amet, sit case soleat ea, no mei aperiam
+            indoctum constituto, mel summo disputationi et. Ei homero graecis
+            rationibus has, te idque ornatus suavitate qui. Eu vide malis oratio
+            eam, illud modus interesset vix te, nibh assentior pri no. Has ex
+            purto patrioque aliquando, in suscipit nominati est. Id alienum
+            suscipiantur ius, est ipsum praesent suavitate ne.
+            <Link>Github</Link>
+            <Link>Demo</Link>
+          </Definition>
+        </Section.Part2>
+
+        <Section.Part>
+          <Image img="../static/pinata8bit.png" />
         </Section.Part>
       </Section.Content>
     </Section>
