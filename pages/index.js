@@ -47,7 +47,7 @@ export default _ => (
         </Section.Part>
         <Section.Part>
           <Video
-            img="https://lorempixel.com/500/250/cats"
+            img="../static/test.png"
             video="https://www.youtube.com/embed/b6VyUAwslZM?rel=0"
           />
         </Section.Part>
