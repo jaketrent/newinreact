@@ -2,6 +2,7 @@ import Changes from '../ui/changes'
 import Content from '../ui/content'
 import Definition from '../ui/definition'
 import Diff from '../ui/diff'
+import Footer from '../ui/footer'
 import GlobalStyles from '../ui/global-styles'
 import Head from '../ui/head'
 import Image from '../ui/image'
@@ -99,5 +100,6 @@ export default _ => (
       </Section.Content>
     </Section>
     <Subscribe />
+    <Footer />
   </Content>
 )

@@ -26,11 +26,14 @@ Section.Part = props => (
 Section.Part2 = props => (
   <div className="section-part">
     <Section.Heading>{props.title}</Section.Heading>
-    {props.children}
+    <div className="body">{props.children}</div>
     <style jsx>{`
       .section-part {
         margin: 2em auto;
         width: 100%;
+      }
+      .body {
+        margin-top: 2em;
       }
       @media screen and (${media.large}) {
         .section-part {
