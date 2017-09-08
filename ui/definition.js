@@ -1,11 +1,11 @@
 export default props => (
   <div className="definition">
-    <p className="body">{props.children}</p>
+    <div className="body">{props.children}</div>
     <style jsx>{`
-      p {
+      .body {
         margin: 0;
       }
-      p + p {
+      .body + .body {
         margin: 1.5em 0;
       }
     `}</style>

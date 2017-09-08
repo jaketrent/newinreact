@@ -131,7 +131,7 @@ const Text = _ => (
       }
       .nuevo,
       .react {
-        font-size: 2em;
+        font-size: 1.3em;
         margin: 0;
       }
       .nuevo {
@@ -155,6 +155,13 @@ const Text = _ => (
         flex-direction: column;
         align-items: center;
         margin: 0.25em 0;
+      }
+      @media screen and (${media.small}) {
+        .nuevo,
+        .react {
+          font-size: 2em;
+          margin: 0;
+        }
       }
       @media screen and (${media.medium}) {
         .word-wrap {

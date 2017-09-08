@@ -78,6 +78,26 @@ export default _ => (
         </Section.Part>
       </Section.Content>
     </Section>
+
+    <Section>
+      <Section.Content>
+        <Section.Part>
+          <Image img="../static/pinata8bit.png" />
+        </Section.Part>
+        <Section.Part2 title="Remembering The Author">
+          <Definition>
+            Lorem ipsum dolor sit amet, sit case soleat ea, no mei aperiam
+            indoctum constituto, mel summo disputationi et. Ei homero graecis
+            rationibus has, te idque ornatus suavitate qui. Eu vide malis oratio
+            eam, illud modus interesset vix te, nibh assentior pri no. Has ex
+            purto patrioque aliquando, in suscipit nominati est. Id alienum
+            suscipiantur ius, est ipsum praesent suavitate ne.
+            <Link>Github</Link>
+            <Link>Demo</Link>
+          </Definition>
+        </Section.Part2>
+      </Section.Content>
+    </Section>
     <Subscribe />
   </Content>
 )
