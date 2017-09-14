@@ -30,10 +30,13 @@ export default class extends React.Component {
         )}
         <style jsx>{`
           .video-container {
-            width: 100%;
+            text-align: center;
+            margin: auto;
           }
           .video-cover {
             width: 100%;
+            max-width: 420px;
+            align-self: center;
           }
           .container {
             position: relative;
