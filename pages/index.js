@@ -2,6 +2,7 @@ import Changes from '../ui/changes'
 import Content from '../ui/content'
 import Definition from '../ui/definition'
 import Diff from '../ui/diff'
+import Filler from '../ui/filler'
 import Footer from '../ui/footer'
 import GlobalStyles from '../ui/global-styles'
 import Head from '../ui/head'
@@ -22,7 +23,7 @@ export default _ => (
     <Changes />
 
     <Section>
-      <Section.Heading id="first">
+      <Section.Heading id="prop-types">
         Prop Types Moved to Separate Package
       </Section.Heading>
       <Section.Content>
@@ -59,8 +60,10 @@ export default _ => (
       </Section.Content>
     </Section>
 
+    <Filler />
+
     <Section>
-      <Section.Heading id="first">React.createClass</Section.Heading>
+      <Section.Heading id="create-class">React.createClass</Section.Heading>
       <Section.Content>
         <Section.Part>
           <Definition>
@@ -94,8 +97,10 @@ export default _ => (
       </Section.Content>
     </Section>
 
+    <Filler />
+
     <Section>
-      <Section.Heading id="first">React Codemod to Migrate</Section.Heading>
+      <Section.Heading id="migration">React Codemod to Migrate</Section.Heading>
       <Section.Content>
         <Section.Part>
           <Definition>
@@ -129,8 +134,10 @@ export default _ => (
       </Section.Content>
     </Section>
 
+    <Filler />
+
     <Section>
-      <Section.Heading id="first">Return Arrays</Section.Heading>
+      <Section.Heading id="return-arrays">Return Arrays</Section.Heading>
       <Section.Content>
         <Section.Part>
           <Definition>
@@ -164,8 +171,10 @@ export default _ => (
       </Section.Content>
     </Section>
 
+    <Filler />
+
     <Section>
-      <Section.Heading id="first">Return Strings</Section.Heading>
+      <Section.Heading id="return-strings">Return Strings</Section.Heading>
       <Section.Content>
         <Section.Part>
           <Definition>
@@ -199,8 +208,12 @@ export default _ => (
       </Section.Content>
     </Section>
 
+    <Filler />
+
     <Section>
-      <Section.Heading id="first">Widget Error Boundaries</Section.Heading>
+      <Section.Heading id="widget-error">
+        Widget Error Boundaries
+      </Section.Heading>
       <Section.Content>
         <Section.Part>
           <Definition>
@@ -234,8 +247,10 @@ export default _ => (
       </Section.Content>
     </Section>
 
+    <Filler />
+
     <Section>
-      <Section.Heading id="first">Route Error Boundaries</Section.Heading>
+      <Section.Heading id="route-error">Route Error Boundaries</Section.Heading>
       <Section.Content>
         <Section.Part>
           <Definition>
@@ -269,8 +284,10 @@ export default _ => (
       </Section.Content>
     </Section>
 
+    <Filler />
+
     <Section>
-      <Section.Heading id="first">Server-Side Streaming</Section.Heading>
+      <Section.Heading id="server-side">Server Side Streaming</Section.Heading>
       <Section.Content>
         <Section.Part>
           <Definition>
@@ -303,6 +320,8 @@ export default _ => (
         </Section.Part>
       </Section.Content>
     </Section>
+
+    <Filler />
 
     <Section>
       <Section.Content>
