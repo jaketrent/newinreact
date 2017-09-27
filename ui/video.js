@@ -35,7 +35,7 @@ export default class extends React.Component {
           }
           .video-cover {
             width: 100%;
-            max-width: 420px;
+            max-width: 498px;
             align-self: center;
           }
           .container {

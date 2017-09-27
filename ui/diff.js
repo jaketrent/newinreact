@@ -53,6 +53,8 @@ export default props => (
         overflow: scroll;
         overflow-y: hidden;
         overflow-x: auto;
+        max-width: 100%;
+        font-size: 0.9em;
       }
     `}</style>
   </div>
