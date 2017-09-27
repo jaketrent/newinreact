@@ -5,7 +5,7 @@ const now = _ => new Date().getFullYear()
 export default _ => (
   <Head>
     <title>New in React v16 | Jake Trent</title>
-    <link rel="shortcut icon" type="image/png" href="/static/img/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="/static/favicon.png" />
 
     <meta
       name="author"

@@ -84,20 +84,19 @@ export default _ => (
       d="M473.84,120.25c-6.15-7.1-28.41-17.5-50.17-29.83-12.14-6.88-19.16-5.42-22.34-4s-5.52,4-6,5.58a5.91,5.91,0,0,0,1.17,5.33c.93,1.07,6,3.72,5.17-.92-.34-1.89-3.08.6-3.09-1,0-8.23,13.6-7.86,29.92,0C451.83,106.78,474.11,119.26,473.84,120.25Z"
       transform="translate(-111.96 -53.42)"
     />
-    <style>{`
+    <style jsx>{`
       .filler {
         max-width: 650px;
-        margin: 3em auto;
-        align-items: center; 
+        margin: 3em auto 6em auto;
+        align-items: center;
         display: block;
       }
       .a {
-        fill:#231f20;
+        fill: #231f20;
       }
       .b {
-        fill:#010101;
+        fill: #010101;
       }
-        
     `}</style>
   </svg>
 )
