@@ -91,9 +91,13 @@ export default _ => (
         align-items: center; 
         display: block;
       }
-      .a
-        {fill:#231f20;}
-      .b
-        {fill:#010101;}`}</style>
+      .a {
+        fill:#231f20;
+      }
+      .b {
+        fill:#010101;
+      }
+        
+    `}</style>
   </svg>
 )
