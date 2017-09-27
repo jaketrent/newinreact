@@ -15715,20 +15715,16 @@ object-assign
       t.default = function(e) {
         return u.default.createElement(
           'div',
-          { className: 'diff', 'data-jsx': 4055163442 },
+          { className: 'diff', 'data-jsx': 760089869 },
           u.default.createElement(
             'pre',
-            { 'data-jsx': 4055163442 },
-            u.default.createElement(
-              'code',
-              { 'data-jsx': 4055163442 },
-              d(e.raw)
-            )
+            { 'data-jsx': 760089869 },
+            u.default.createElement('code', { 'data-jsx': 760089869 }, d(e.raw))
           ),
           u.default.createElement(a.default, {
-            styleId: 4055163442,
+            styleId: 760089869,
             css:
-              '.diff[data-jsx="4055163442"]{border:3px solid black;overflow:scroll;overflow-y:hidden;overflow-x:auto}'
+              '.diff[data-jsx="760089869"]{border:3px solid black;overflow:scroll;overflow-y:hidden;overflow-x:auto;max-width:100%;font-size:0.9em}'
           })
         )
       }
@@ -16644,17 +16640,17 @@ object-assign
                 value: function() {
                   return g.default.createElement(
                     'div',
-                    { className: 'video-container', 'data-jsx': 1936698903 },
+                    { className: 'video-container', 'data-jsx': 3299150804 },
                     this.state.isVideoCover
                       ? g.default.createElement('img', {
                           src: this.props.img,
                           className: 'video-cover',
                           onClick: this._handleClick.bind(this),
-                          'data-jsx': 1936698903
+                          'data-jsx': 3299150804
                         })
                       : g.default.createElement(
                           'div',
-                          { className: 'container', 'data-jsx': 1936698903 },
+                          { className: 'container', 'data-jsx': 3299150804 },
                           g.default.createElement('iframe', {
                             className: 'frame',
                             width: '560',
@@ -16662,13 +16658,13 @@ object-assign
                             src: this.props.video,
                             frameBorder: '0',
                             allowFullScreen: !0,
-                            'data-jsx': 1936698903
+                            'data-jsx': 3299150804
                           })
                         ),
                     g.default.createElement(m.default, {
-                      styleId: 1936698903,
+                      styleId: 3299150804,
                       css:
-                        '.video-container[data-jsx="1936698903"]{text-align:center;margin:auto}.video-cover[data-jsx="1936698903"]{width:100%;max-width:420px;-webkit-align-self:center;-ms-flex-item-align:center;align-self:center}.container[data-jsx="1936698903"]{position:relative;width:100%;height:0;padding-bottom:56.25%}.frame[data-jsx="1936698903"]{position:absolute;top:0;left:0;height:100%;width:100%}'
+                        '.video-container[data-jsx="3299150804"]{text-align:center;margin:auto}.video-cover[data-jsx="3299150804"]{width:100%;max-width:498px;-webkit-align-self:center;-ms-flex-item-align:center;align-self:center}.container[data-jsx="3299150804"]{position:relative;width:100%;height:0;padding-bottom:56.25%}.frame[data-jsx="3299150804"]{position:absolute;top:0;left:0;height:100%;width:100%}'
                     })
                   )
                 }
