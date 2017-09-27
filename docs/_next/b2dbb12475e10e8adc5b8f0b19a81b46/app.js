@@ -4911,7 +4911,7 @@ object-assign
         return e.length === t.length ? -1 : n
       }
       function o(e) {
-        return e ? (e.nodeType === R ? e.documentElement : e.firstChild) : null
+        return e ? (e.nodeType === j ? e.documentElement : e.firstChild) : null
       }
       function a(e) {
         return (e.getAttribute && e.getAttribute(O)) || ''
@@ -4938,7 +4938,7 @@ object-assign
       }
       function s(e, t, n) {
         for (
-          C.unmountComponent(e, n), t.nodeType === R && (t = t.documentElement);
+          C.unmountComponent(e, n), t.nodeType === j && (t = t.documentElement);
           t.lastChild;
 
         )
@@ -4954,7 +4954,7 @@ object-assign
       function c(e) {
         return !(
           !e ||
-          (e.nodeType !== A && e.nodeType !== R && e.nodeType !== j)
+          (e.nodeType !== A && e.nodeType !== j && e.nodeType !== R)
         )
       }
       function f(e) {
@@ -4987,8 +4987,8 @@ object-assign
         O = (n(1), m.ID_ATTRIBUTE_NAME),
         I = m.ROOT_ATTRIBUTE_NAME,
         A = 1,
-        R = 9,
-        j = 11,
+        j = 9,
+        R = 11,
         D = {},
         L = 1,
         U = function() {
@@ -5100,9 +5100,9 @@ object-assign
                 f.substring(d - 20, d + 20) +
                 '\n (server) ' +
                 l.substring(d - 20, d + 20)
-            t.nodeType === R && p('42', m)
+            t.nodeType === j && p('42', m)
           }
-          if ((t.nodeType === R && p('43'), i.useCreateElement)) {
+          if ((t.nodeType === j && p('43'), i.useCreateElement)) {
             for (; t.lastChild; ) t.removeChild(t.lastChild)
             h.insertTreeBefore(t, e, null)
           } else S(t, e), y.precacheNode(n, t.firstChild)
@@ -5762,7 +5762,7 @@ object-assign
                           break
                         }
                         return (
-                          (o = { err: t, pathname: R, query: j, asPath: q }),
+                          (o = { err: t, pathname: j, query: R, asPath: q }),
                           (e.next = 8),
                           (0, k.loadGetInitialProps)(G, o)
                         )
@@ -5888,8 +5888,8 @@ object-assign
         O = M.__NEXT_DATA__,
         I = O.props,
         A = O.err,
-        R = O.pathname,
-        j = O.query,
+        j = O.pathname,
+        R = O.query,
         D = O.buildId,
         L = O.chunks,
         U = O.assetPrefix,
@@ -5963,7 +5963,7 @@ object-assign
                       (t.ErrorComponent = G = e.sent),
                       (e.prev = 29),
                       (e.next = 32),
-                      H.loadPage(R)
+                      H.loadPage(j)
                     )
                   case 32:
                     ;(Y = e.sent), (e.next = 39)
@@ -5975,7 +5975,7 @@ object-assign
                       (Y = G)
                   case 39:
                     return (
-                      (t.router = K = (0, x.createRouter)(R, j, q, {
+                      (t.router = K = (0, x.createRouter)(j, R, q, {
                         pageLoader: H,
                         Component: Y,
                         ErrorComponent: G,
@@ -6625,7 +6625,7 @@ object-assign
                     l = t.domain
                   try {
                     i
-                      ? (o || (2 == e._h && R(e), (e._h = 1)),
+                      ? (o || (2 == e._h && j(e), (e._h = 1)),
                         !0 === i
                           ? (n = r)
                           : (l && l.enter(), (n = i(r)), l && l.exit()),
@@ -6672,7 +6672,7 @@ object-assign
             if (((t = n[r++]), t.fail || !A(t.promise))) return !1
           return !0
         },
-        R = function(e) {
+        j = function(e) {
           g.call(s, function() {
             var t
             k
@@ -6680,7 +6680,7 @@ object-assign
               : (t = s.onrejectionhandled) && t({ promise: e, reason: e._v })
           })
         },
-        j = function(e) {
+        R = function(e) {
           var t = this
           t._d ||
             ((t._d = !0),
@@ -6701,14 +6701,14 @@ object-assign
                 ? y(function() {
                     var r = { _w: n, _d: !1 }
                     try {
-                      t.call(e, l(D, r, 1), l(j, r, 1))
+                      t.call(e, l(D, r, 1), l(R, r, 1))
                     } catch (e) {
-                      j.call(r, e)
+                      R.call(r, e)
                     }
                   })
                 : ((n._v = e), (n._s = 1), O(n, !1))
             } catch (e) {
-              j.call({ _w: n, _d: !1 }, e)
+              R.call({ _w: n, _d: !1 }, e)
             }
           }
         }
@@ -6716,9 +6716,9 @@ object-assign
         ((C = function(e) {
           h(this, C, 'Promise', '_h'), p(e), r.call(this)
           try {
-            e(l(D, this, 1), l(j, this, 1))
+            e(l(D, this, 1), l(R, this, 1))
           } catch (e) {
-            j.call(this, e)
+            R.call(this, e)
           }
         }),
         (r = function(e) {
@@ -6751,7 +6751,7 @@ object-assign
           var e = new r()
           ;(this.promise = e),
             (this.resolve = l(D, e, 1)),
-            (this.reject = l(j, e, 1))
+            (this.reject = l(R, e, 1))
         }),
         (_.f = T = function(e) {
           return S(C, e) ? new a(e) : o(e)
@@ -8451,27 +8451,27 @@ object-assign
         },
         I = null,
         A = null,
-        R = !1
-      w.canUseDOM &&
-        (R =
-          S('change') && (!document.documentMode || document.documentMode > 8))
-      var j = !1
+        j = !1
       w.canUseDOM &&
         (j =
+          S('change') && (!document.documentMode || document.documentMode > 8))
+      var R = !1
+      w.canUseDOM &&
+        (R =
           S('input') &&
           (!('documentMode' in document) || document.documentMode > 9))
       var D = {
         eventTypes: O,
         _allowSimulatedPassThrough: !0,
-        _isInputEventSupported: j,
+        _isInputEventSupported: R,
         extractEvents: function(e, t, n, a) {
           var i,
             u,
             s = t ? C.getNodeFromInstance(t) : window
           if (
             (o(s)
-              ? R ? (i = c) : (u = f)
-              : M(s) ? (j ? (i = _) : ((i = v), (u = m))) : g(s) && (i = y),
+              ? j ? (i = c) : (u = f)
+              : M(s) ? (R ? (i = _) : ((i = v), (u = m))) : g(s) && (i = y),
             i)
           ) {
             var l = i(e, t, n)
@@ -8990,7 +8990,7 @@ object-assign
           null != t.style && 'object' != typeof t.style && v('62', r(e)))
       }
       function a(e, t, n, r) {
-        if (!(r instanceof R)) {
+        if (!(r instanceof j)) {
           var o = e._hostContainerInfo,
             a = o._node && o._node.nodeType === z,
             u = a ? o._node : o._ownerDocument
@@ -9107,8 +9107,8 @@ object-assign
         O = n(149),
         I = n(245),
         A = (n(16), n(246)),
-        R = n(253),
-        j = (n(12), n(65)),
+        j = n(253),
+        R = (n(12), n(65)),
         D = (n(0), n(92), n(100), n(142)),
         L = (n(104), n(1), T),
         U = C.deleteListener,
@@ -9304,7 +9304,7 @@ object-assign
             else {
               var a = V[typeof t.children] ? t.children : null,
                 i = null != a ? null : t.children
-              if (null != a) r = j(a)
+              if (null != a) r = R(a)
               else if (null != i) {
                 var u = this.mountChildren(i, e, n)
                 r = u.join('')
@@ -12917,8 +12917,8 @@ object-assign
         O = r.Symbol,
         I = r.JSON,
         A = I && I.stringify,
-        R = p('_hidden'),
-        j = p('toPrimitive'),
+        j = p('_hidden'),
+        R = p('toPrimitive'),
         D = {}.propertyIsEnumerable,
         L = c('symbol-registry'),
         U = c('symbols'),
@@ -12966,9 +12966,9 @@ object-assign
             _(n),
             o(U, t)
               ? (n.enumerable
-                  ? (o(e, R) && e[R][t] && (e[R][t] = !1),
+                  ? (o(e, j) && e[j][t] && (e[j][t] = !1),
                     (n = w(n, { enumerable: E(0, !1) })))
-                  : (o(e, R) || S(e, R, E(1, {})), (e[R][t] = !0)),
+                  : (o(e, j) || S(e, j, E(1, {})), (e[j][t] = !0)),
                 W(e, t, n))
               : S(e, t, n)
           )
@@ -12986,20 +12986,20 @@ object-assign
           var t = D.call(this, (e = b(e, !0)))
           return (
             !(this === q && o(U, e) && !o(F, e)) &&
-            (!(t || !o(this, e) || !o(U, e) || (o(this, R) && this[R][e])) || t)
+            (!(t || !o(this, e) || !o(U, e) || (o(this, j) && this[j][e])) || t)
           )
         },
         Z = function(e, t) {
           if (((e = x(e)), (t = b(t, !0)), e !== q || !o(U, t) || o(F, t))) {
             var n = N(e, t)
             return (
-              !n || !o(U, t) || (o(e, R) && e[R][t]) || (n.enumerable = !0), n
+              !n || !o(U, t) || (o(e, j) && e[j][t]) || (n.enumerable = !0), n
             )
           }
         },
         $ = function(e) {
           for (var t, n = M(x(e)), r = [], a = 0; n.length > a; )
-            o(U, (t = n[a++])) || t == R || t == s || r.push(t)
+            o(U, (t = n[a++])) || t == j || t == s || r.push(t)
           return r
         },
         J = function(e) {
@@ -13017,7 +13017,7 @@ object-assign
           var e = d(arguments.length > 0 ? arguments[0] : void 0),
             t = function(n) {
               this === q && t.call(F, n),
-                o(this, R) && o(this[R], e) && (this[R][e] = !1),
+                o(this, j) && o(this[j], e) && (this[j][e] = !1),
                 W(this, e, E(1, n))
             }
           return a && B && W(q, e, { configurable: !0, set: t }), z(e)
@@ -13101,7 +13101,7 @@ object-assign
               }
             }
           ),
-        O.prototype[j] || n(24)(O.prototype, j, O.prototype.valueOf),
+        O.prototype[R] || n(24)(O.prototype, R, O.prototype.valueOf),
         f(O, 'Symbol'),
         f(Math, 'Math', !0),
         f(r.JSON, 'JSON', !0)
@@ -13450,9 +13450,9 @@ object-assign
             ) {
               var A = O[P]
               if (A && !A.match(y)) {
-                for (var R = '', j = 0, D = A.length; j < D; j++)
-                  A.charCodeAt(j) > 127 ? (R += 'x') : (R += A[j])
-                if (!R.match(y)) {
+                for (var j = '', R = 0, D = A.length; R < D; R++)
+                  A.charCodeAt(R) > 127 ? (j += 'x') : (j += A[R])
+                if (!j.match(y)) {
                   var L = O.slice(0, P),
                     U = O.slice(P + 1),
                     F = A.match(_)
@@ -13764,9 +13764,9 @@ object-assign
               return (
                 e > 65535 &&
                   ((e -= 65536),
-                  (t += j(((e >>> 10) & 1023) | 55296)),
+                  (t += R(((e >>> 10) & 1023) | 55296)),
                   (e = 56320 | (1023 & e))),
-                (t += j(e))
+                (t += R(e))
               )
             }).join('')
           }
@@ -13781,12 +13781,12 @@ object-assign
           function p(e, t, n) {
             var r = 0
             for (
-              e = n ? R(e / k) : e >> 1, e += R(e / t);
+              e = n ? j(e / k) : e >> 1, e += j(e / t);
               e > (A * w) >> 1;
               r += b
             )
-              e = R(e / A)
-            return R(r + (A + 1) * e / (e + C))
+              e = j(e / A)
+            return j(r + (A + 1) * e / (e + C))
           }
           function h(e) {
             var t,
@@ -13811,17 +13811,17 @@ object-assign
                 a = g, u = 1, s = b;
                 o >= v && i('invalid-input'),
                   (l = f(e.charCodeAt(o++))),
-                  (l >= b || l > R((x - g) / u)) && i('overflow'),
+                  (l >= b || l > j((x - g) / u)) && i('overflow'),
                   (g += l * u),
                   (d = s <= _ ? E : s >= _ + w ? w : s - _),
                   !(l < d);
                 s += b
               )
-                (h = b - d), u > R(x / h) && i('overflow'), (u *= h)
+                (h = b - d), u > j(x / h) && i('overflow'), (u *= h)
               ;(t = m.length + 1),
                 (_ = p(g - a, t, 0 == a)),
-                R(g / t) > x - y && i('overflow'),
-                (y += R(g / t)),
+                j(g / t) > x - y && i('overflow'),
+                (y += j(g / t)),
                 (g %= t),
                 m.splice(g++, 0, y)
             }
@@ -13845,12 +13845,12 @@ object-assign
               _,
               C = []
             for (e = l(e), v = e.length, t = T, n = 0, a = P, u = 0; u < v; ++u)
-              (m = e[u]) < 128 && C.push(j(m))
+              (m = e[u]) < 128 && C.push(R(m))
             for (r = o = C.length, o && C.push(N); r < v; ) {
               for (s = x, u = 0; u < v; ++u) (m = e[u]) >= t && m < s && (s = m)
               for (
                 g = r + 1,
-                  s - t > R((x - n) / g) && i('overflow'),
+                  s - t > j((x - n) / g) && i('overflow'),
                   n += (s - t) * g,
                   t = s,
                   u = 0;
@@ -13865,9 +13865,9 @@ object-assign
                   )
                     (_ = c - h),
                       (y = b - h),
-                      C.push(j(d(h + _ % y, 0))),
-                      (c = R(_ / y))
-                  C.push(j(d(c, 0))), (a = p(n, g, r == o)), (n = 0), ++r
+                      C.push(R(d(h + _ % y, 0))),
+                      (c = j(_ / y))
+                  C.push(R(d(c, 0))), (a = p(n, g, r == o)), (n = 0), ++r
                 }
               ++n, ++t
             }
@@ -13905,8 +13905,8 @@ object-assign
               'invalid-input': 'Invalid input'
             },
             A = b - E,
-            R = Math.floor,
-            j = String.fromCharCode
+            j = Math.floor,
+            R = String.fromCharCode
           ;(_ = {
             version: '1.3.2',
             ucs2: { decode: l, encode: c },
@@ -15057,8 +15057,8 @@ object-assign
         O = r(M),
         I = n(362),
         A = r(I),
-        R = n(363),
-        j = r(R)
+        j = n(363),
+        R = r(j)
       t.default = function(e) {
         return a.default.createElement(
           l.default,
@@ -15104,7 +15104,7 @@ object-assign
               a.default.createElement(
                 T.default.Part,
                 null,
-                a.default.createElement(j.default, {
+                a.default.createElement(R.default, {
                   img: '../static/prop-types.png',
                   video: 'https://www.youtube.com/embed/b6VyUAwslZM?rel=0'
                 })
@@ -15148,7 +15148,7 @@ object-assign
               a.default.createElement(
                 T.default.Part,
                 null,
-                a.default.createElement(j.default, {
+                a.default.createElement(R.default, {
                   img: '../static/createclass.png',
                   video: 'https://www.youtube.com/embed/b6VyUAwslZM?rel=0'
                 })
@@ -15192,7 +15192,7 @@ object-assign
               a.default.createElement(
                 T.default.Part,
                 null,
-                a.default.createElement(j.default, {
+                a.default.createElement(R.default, {
                   img: '../static/migration.png',
                   video: 'https://www.youtube.com/embed/b6VyUAwslZM?rel=0'
                 })
@@ -15236,7 +15236,7 @@ object-assign
               a.default.createElement(
                 T.default.Part,
                 null,
-                a.default.createElement(j.default, {
+                a.default.createElement(R.default, {
                   img: '../static/return-arrays.png',
                   video: 'https://www.youtube.com/embed/b6VyUAwslZM?rel=0'
                 })
@@ -15280,7 +15280,7 @@ object-assign
               a.default.createElement(
                 T.default.Part,
                 null,
-                a.default.createElement(j.default, {
+                a.default.createElement(R.default, {
                   img: '../static/return-strings.png',
                   video: 'https://www.youtube.com/embed/b6VyUAwslZM?rel=0'
                 })
@@ -15324,7 +15324,7 @@ object-assign
               a.default.createElement(
                 T.default.Part,
                 null,
-                a.default.createElement(j.default, {
+                a.default.createElement(R.default, {
                   img: '../static/widget-error.png',
                   video: 'https://www.youtube.com/embed/b6VyUAwslZM?rel=0'
                 })
@@ -15368,7 +15368,7 @@ object-assign
               a.default.createElement(
                 T.default.Part,
                 null,
-                a.default.createElement(j.default, {
+                a.default.createElement(R.default, {
                   img: '../static/route-error.png',
                   video: 'https://www.youtube.com/embed/b6VyUAwslZM?rel=0'
                 })
@@ -15412,7 +15412,7 @@ object-assign
               a.default.createElement(
                 T.default.Part,
                 null,
-                a.default.createElement(j.default, {
+                a.default.createElement(R.default, {
                   img: '../static/server-streaming.png',
                   video: 'https://www.youtube.com/embed/b6VyUAwslZM?rel=0'
                 })
@@ -15731,121 +15731,145 @@ object-assign
     },
     function(e, t, n) {
       'use strict'
+      function r(e) {
+        return e && e.__esModule ? e : { default: e }
+      }
       Object.defineProperty(t, '__esModule', { value: !0 })
-      var r = n(3),
-        o = (function(e) {
-          return e && e.__esModule ? e : { default: e }
-        })(r)
+      var o = n(11),
+        a = r(o),
+        i = n(3),
+        u = r(i)
       t.default = function(e) {
-        return o.default.createElement(
+        return u.default.createElement(
           'svg',
           {
             xmlns: 'http://www.w3.org/2000/svg',
             viewBox: '0 0 925.67 108.13',
-            className: 'filler'
+            className: 'filler',
+            'data-jsx': 860039912
           },
-          o.default.createElement('title', null, 'filler-filigree'),
-          o.default.createElement('path', {
+          u.default.createElement(
+            'title',
+            { 'data-jsx': 860039912 },
+            'filler-filigree'
+          ),
+          u.default.createElement('path', {
             className: 'a',
             d:
               'M664.28,129.28c6-12.07,25.39-37.13,50.1-61.06,14-13.55,34.32-14.23,38.29-11.3s4.74,6.44,4.83,7.92c.17,2.67,0,5.6-1.67,7.27-2.64,2.63-9.17,7.4-9.67.73-.2-2.71,2.82-.89,4.17-2.67C760,57.39,733.5,57.31,711,78A380.78,380.78,0,0,0,664.28,129.28Z',
-            transform: 'translate(-111.96 -53.42)'
+            transform: 'translate(-111.96 -53.42)',
+            'data-jsx': 860039912
           }),
-          o.default.createElement('path', {
+          u.default.createElement('path', {
             className: 'a',
             d:
               'M630.6,155.43s47.81-39.67,177.55-33.33c98.32,4.8,97.87,32.21,180.51,31.71,58.47-.35,48.92-21.89,47.58-33.38-1.45-12.41-1.16-21-13.81-29.92-5.4-3.79-23,.36-25.35,8.89-3.33,11.85-.07,23.43,3.67,26.85,7.67,7,19.56-14.43,15.42-15.79-7.14-2.35-2.29,4.67-2.29,4.67l-5.48,5.13s-6.07-2.48-5.48-7.25l.21-5.33c-.25-2.18,2.46-9.37,4.29-10.58,2.27-1.5,11.24-1.91,13.83-.17,10.79,7.25,4.75,28.2,3.33,37.89s-20.78,15-30.85,15.25c-81.88,2-66.64-35.43-188.89-37.29C682.05,110.89,630.6,155.43,630.6,155.43Z',
-            transform: 'translate(-111.96 -53.42)'
+            transform: 'translate(-111.96 -53.42)',
+            'data-jsx': 860039912
           }),
-          o.default.createElement('path', {
+          u.default.createElement('path', {
             className: 'a',
             d: 'M842.67,259',
-            transform: 'translate(-111.96 -53.42)'
+            transform: 'translate(-111.96 -53.42)',
+            'data-jsx': 860039912
           }),
-          o.default.createElement('path', {
+          u.default.createElement('path', {
             className: 'a',
             d:
               'M637,86c3.83,2.05,4.89,4.78,5,6.43.2,2.73-2.3,9.49-8.79,9.78-3.72.17-2.53-2.76-2.17-4.8.27-1.48,4.55-2.12,3.76-.79a3.12,3.12,0,0,0-.33,2.88c.14.34.65.37,1,0,2.32-2,9.29-8.74-.32-11.87-1.57-.51-11.34,5.59-12.31,7.06-1.13,1.7-1.55,1.16-3.34,7.73-1.38,5.06.84-7.1,2.51-8.58C624.92,91.35,635.79,85.34,637,86Z',
-            transform: 'translate(-111.96 -53.42)'
+            transform: 'translate(-111.96 -53.42)',
+            'data-jsx': 860039912
           }),
-          o.default.createElement('path', {
+          u.default.createElement('path', {
             className: 'a',
             d:
               'M654.13,124.38c-2-9.26-6.2-10.35-10.12-12.12-4.71-2.13-9.19-2.79-12.5-1.43-4.52,1.85-6.52,4.86-4.25,8.43,2.63,4.13,11.31-10.06,7.5,3.75-.62,2.26-9.75,2.75-11.75-1.75-1.59-3.58-2.19-7.12,1.15-10.43s10.83-4.41,13.48-4.95,11.19,4.76,14,6.63,5.31,8.94,6.38,10.5,7.13,13-12,25.25a87.39,87.39,0,0,1-44.67,13.3S660.43,152.9,654.13,124.38Z',
-            transform: 'translate(-111.96 -53.42)'
+            transform: 'translate(-111.96 -53.42)',
+            'data-jsx': 860039912
           }),
-          o.default.createElement('path', {
+          u.default.createElement('path', {
             className: 'a',
             d:
               'M647.12,75.82c4.45,2.24,4.4,4.47,4.74,6.68.4,2.65.08,5-1.1,6.48-1.61,2-3.45,2.65-5,1-1.73-1.86,6.82-4.38-.83-4.27-1.25,0-2.84,4.55-.82,6.15,1.6,1.27,3.33,2,5.52.78s3.85-4.88,4.52-6.14-.8-6.26-1.35-7.91-3.81-3.84-4.46-4.58-5.63-5.28-14.72,2.75a46.64,46.64,0,0,0-13.38,20.76S633.4,68.93,647.12,75.82Z',
-            transform: 'translate(-111.96 -53.42)'
+            transform: 'translate(-111.96 -53.42)',
+            'data-jsx': 860039912
           }),
-          o.default.createElement('path', {
+          u.default.createElement('path', {
             className: 'a',
             d:
               'M675.75,120.25c6.15-7.1,28.41-17.5,50.17-29.83,12.14-6.88,19.16-5.42,22.34-4s5.52,4,6,5.58a5.91,5.91,0,0,1-1.17,5.33c-.93,1.07-6,3.72-5.17-.92.34-1.89,3.08.6,3.09-1,0-8.23-13.6-7.86-29.92,0C697.77,106.78,675.48,119.26,675.75,120.25Z',
-            transform: 'translate(-111.96 -53.42)'
+            transform: 'translate(-111.96 -53.42)',
+            'data-jsx': 860039912
           }),
-          o.default.createElement('path', {
+          u.default.createElement('path', {
             className: 'a',
             d:
               'M615.66,88.54c-2.22-6.39-11-10.15-22.47-10.36-2-13.33-6.5-22.92-12.21-24.51a6.59,6.59,0,0,0-4,.17l1.52,4.39a3.46,3.46,0,0,1,2-.14c2.75.76,5.75,6.27,7.61,14,.46,1.91.85,4,1.18,6.07a71,71,0,0,0-11.12,1.46,99.76,99.76,0,0,0-10.21-7.48c3.25-7.81,7.12-12.81,10.52-14l-1.52-4.39c-4.49,1.56-9,7.46-12.66,16.21-8.26-4.59-15.46-6.36-20-4.8l1.52,4.39c3.38-1.17,9.52.33,16.91,4.4a96.72,96.72,0,0,0-3.34,12.16,68.4,68.4,0,0,0-9.64,5.77c-1.06-1.84-2-3.65-2.83-5.41-3.38-7.25-4.46-13.42-2.79-15.74a3.33,3.33,0,0,1,1.7-1.16l-1.52-4.39A6.7,6.7,0,0,0,541,67.62c-3.48,4.78-1.06,15.08,5.64,26.73-8.85,7.31-13.37,15.64-11.15,22s11,10.15,22.47,10.36c2,13.33,6.5,22.92,12.21,24.51a6.61,6.61,0,0,0,4.06-.17c4.49-1.56,9-7.46,12.66-16.21,8.26,4.59,15.46,6.36,20,4.8a6.7,6.7,0,0,0,3.31-2.38c3.48-4.78,1.06-15.08-5.64-26.73,8.82-7.28,13.33-15.63,11.12-22ZM589.83,82.8c.28,2.75.43,5.63.49,8.54-1.22-1.34-2.47-2.67-3.78-4s-2.63-2.57-4-3.79a66.37,66.37,0,0,1,7.24-.77Zm-.2,23.55c-.35,3.1-.78,6.07-1.33,8.88a74.81,74.81,0,0,1-7.25,3c-2.47.86-5,1.58-7.48,2.18-2.17-1.87-4.36-3.91-6.55-6.1s-4.17-4.37-6.12-6.65c.1-3,.32-6,.65-9s.78-6.07,1.33-8.88a74.81,74.81,0,0,1,7.25-3c2.47-.86,5-1.58,7.48-2.18,2.17,1.87,4.36,3.91,6.55,6.1s4.17,4.37,6.12,6.65c-.11,3-.32,6-.65,9ZM594,102c1.8,2.33,3.46,4.71,5,7a66,66,0,0,1-6.18,3.91c.27-1.79.53-3.63.73-5.48s.35-3.67.48-5.48Zm-9.27,26.75c-2.18-1.36-4.43-2.94-6.73-4.72,1.5-.43,3-.89,4.54-1.42s3-1.1,4.49-1.71A79.16,79.16,0,0,1,584.74,128.71Zm-16.18-7.37a66.37,66.37,0,0,1-7.24.77c-.28-2.75-.43-5.63-.49-8.54,1.22,1.34,2.47,2.67,3.78,4S567.24,120.12,568.56,121.34ZM566.42,76.2c2.18,1.36,4.43,2.94,6.73,4.72-1.5.43-3,.89-4.54,1.42s-3,1.1-4.49,1.71A79.16,79.16,0,0,1,566.42,76.2ZM558.35,92c-.27,1.79-.53,3.63-.73,5.48s-.36,3.65-.48,5.46c-1.8-2.33-3.46-4.71-5-7A71.41,71.41,0,0,1,558.35,92Zm-6.23,29.77c-6.81-1-11.91-3.56-13-6.65s1.31-8.3,6.07-13.26A47.81,47.81,0,0,1,549,98.29,113.8,113.8,0,0,0,556.88,109a112.3,112.3,0,0,0,.51,13.18,47.13,47.13,0,0,1-5.27-.42Zm18.55,25.07c-2.75-.76-5.75-6.27-7.61-14-.46-1.91-.85-4-1.18-6.07A71,71,0,0,0,573,125.24a99.76,99.76,0,0,0,10.21,7.48c-3.25,7.81-7.12,12.81-10.52,14a3.58,3.58,0,0,1-2,.11Zm33.54-28.45c3.38,7.25,4.46,13.42,2.79,15.74a3.33,3.33,0,0,1-1.7,1.16c-3.38,1.17-9.52-.33-16.91-4.4a96.72,96.72,0,0,0,3.34-12.16,68.4,68.4,0,0,0,9.64-5.77C602.44,114.8,603.4,116.61,604.22,118.38Zm1.73-15.31a47.8,47.8,0,0,1-3.83,3.56,113.8,113.8,0,0,0-7.84-10.71,112.3,112.3,0,0,0-.51-13.18,49.18,49.18,0,0,1,5.29.41c6.81,1,11.91,3.56,13,6.65s-1.32,8.31-6.08,13.27Z',
-            transform: 'translate(-111.96 -53.42)'
+            transform: 'translate(-111.96 -53.42)',
+            'data-jsx': 860039912
           }),
-          o.default.createElement('ellipse', {
+          u.default.createElement('ellipse', {
             className: 'b',
             cx: '575.57',
             cy: '102.46',
             rx: '7.9',
             ry: '9.52',
-            transform: 'matrix(0.94, -0.33, 0.33, 0.94, -113.72, 141.07)'
+            transform: 'matrix(0.94, -0.33, 0.33, 0.94, -113.72, 141.07)',
+            'data-jsx': 860039912
           }),
-          o.default.createElement('path', {
+          u.default.createElement('path', {
             className: 'b',
             d: 'M576.92,53.84',
-            transform: 'translate(-111.96 -53.42)'
+            transform: 'translate(-111.96 -53.42)',
+            'data-jsx': 860039912
           }),
-          o.default.createElement('path', {
+          u.default.createElement('path', {
             className: 'a',
             d:
               'M485.31,129.28c-6-12.07-25.39-37.13-50.1-61.06-14-13.55-34.32-14.23-38.29-11.3s-4.74,6.44-4.83,7.92c-.17,2.67,0,5.6,1.67,7.27,2.64,2.63,9.17,7.4,9.67.73.2-2.71-2.82-.89-4.17-2.67C389.6,57.39,416.09,57.31,438.62,78A380.78,380.78,0,0,1,485.31,129.28Z',
-            transform: 'translate(-111.96 -53.42)'
+            transform: 'translate(-111.96 -53.42)',
+            'data-jsx': 860039912
           }),
-          o.default.createElement('path', {
+          u.default.createElement('path', {
             className: 'a',
             d:
               'M519,155.43s-47.81-39.67-177.55-33.33c-98.32,4.8-97.87,32.21-180.51,31.71-58.47-.35-48.92-21.89-47.58-33.38,1.45-12.41,1.16-21,13.81-29.92,5.4-3.79,23,.36,25.35,8.89,3.33,11.85.07,23.43-3.67,26.85-7.67,7-19.56-14.43-15.42-15.79,7.14-2.35,2.29,4.67,2.29,4.67l5.48,5.13s6.07-2.48,5.48-7.25l-.21-5.33c.25-2.18-2.46-9.37-4.29-10.58-2.27-1.5-11.24-1.91-13.83-.17-10.79,7.25-4.75,28.2-3.33,37.89s20.78,15,30.85,15.25c81.88,2,66.64-35.43,188.89-37.29C467.54,110.89,519,155.43,519,155.43Z',
-            transform: 'translate(-111.96 -53.42)'
+            transform: 'translate(-111.96 -53.42)',
+            'data-jsx': 860039912
           }),
-          o.default.createElement('path', {
+          u.default.createElement('path', {
             className: 'a',
             d:
               'M512.55,86c-3.83,2.05-4.89,4.78-5,6.43-.2,2.73,2.3,9.49,8.79,9.78,3.72.17,2.53-2.76,2.17-4.8-.27-1.48-4.55-2.12-3.76-.79a3.12,3.12,0,0,1,.33,2.88c-.14.34-.65.37-1,0-2.32-2-9.29-8.74.32-11.87,1.57-.51,11.34,5.59,12.31,7.06,1.13,1.7,1.55,1.16,3.34,7.73,1.38,5.06-.84-7.1-2.51-8.58C524.67,91.35,513.8,85.34,512.55,86Z',
-            transform: 'translate(-111.96 -53.42)'
+            transform: 'translate(-111.96 -53.42)',
+            'data-jsx': 860039912
           }),
-          o.default.createElement('path', {
+          u.default.createElement('path', {
             className: 'a',
             d:
               'M495.47,124.38c2-9.26,6.2-10.35,10.13-12.12,4.71-2.13,9.19-2.79,12.5-1.43,4.52,1.85,6.52,4.86,4.25,8.43-2.62,4.13-11.31-10.06-7.5,3.75.63,2.26,9.75,2.75,11.75-1.75,1.59-3.58,2.19-7.12-1.15-10.43s-10.83-4.41-13.48-4.95-11.19,4.76-14,6.63-5.31,8.94-6.37,10.5-7.12,13,12,25.25a87.39,87.39,0,0,0,44.67,13.3S489.16,152.9,495.47,124.38Z',
-            transform: 'translate(-111.96 -53.42)'
+            transform: 'translate(-111.96 -53.42)',
+            'data-jsx': 860039912
           }),
-          o.default.createElement('path', {
+          u.default.createElement('path', {
             className: 'a',
             d:
               'M502.47,75.82c-4.45,2.24-4.4,4.47-4.74,6.68-.4,2.65-.08,5,1.1,6.48,1.61,2,3.45,2.65,5,1,1.73-1.86-6.82-4.38.83-4.27,1.25,0,2.84,4.55.82,6.15-1.6,1.27-3.33,2-5.52.78s-3.85-4.88-4.52-6.14.8-6.26,1.35-7.91,3.81-3.84,4.46-4.58,5.63-5.28,14.72,2.75A46.64,46.64,0,0,1,529.3,97.56S516.19,68.93,502.47,75.82Z',
-            transform: 'translate(-111.96 -53.42)'
+            transform: 'translate(-111.96 -53.42)',
+            'data-jsx': 860039912
           }),
-          o.default.createElement('path', {
+          u.default.createElement('path', {
             className: 'a',
             d:
               'M473.84,120.25c-6.15-7.1-28.41-17.5-50.17-29.83-12.14-6.88-19.16-5.42-22.34-4s-5.52,4-6,5.58a5.91,5.91,0,0,0,1.17,5.33c.93,1.07,6,3.72,5.17-.92-.34-1.89-3.08.6-3.09-1,0-8.23,13.6-7.86,29.92,0C451.83,106.78,474.11,119.26,473.84,120.25Z',
-            transform: 'translate(-111.96 -53.42)'
+            transform: 'translate(-111.96 -53.42)',
+            'data-jsx': 860039912
           }),
-          o.default.createElement(
-            'style',
-            null,
-            '\n      .filler {\n        max-width: 650px;\n        margin: 3em auto;\n        align-items: center; \n        display: block;\n      }\n      .a {\n        fill:#231f20;\n      }\n      .b {\n        fill:#010101;\n      }\n        \n    '
-          )
+          u.default.createElement(a.default, {
+            styleId: 860039912,
+            css:
+              '.filler[data-jsx="860039912"]{max-width:650px;margin:3em auto 6em auto;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:block}.a[data-jsx="860039912"]{fill:#231f20}.b[data-jsx="860039912"]{fill:#010101}'
+          })
         )
       }
     },
@@ -15968,7 +15992,7 @@ object-assign
           a.default.createElement('link', {
             rel: 'shortcut icon',
             type: 'image/png',
-            href: '/static/img/favicon.png'
+            href: '/static/favicon.png'
           }),
           a.default.createElement('meta', {
             name: 'author',
