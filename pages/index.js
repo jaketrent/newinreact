@@ -23,7 +23,7 @@ export default _ => (
     <Changes />
 
     <Section>
-      <Section.Heading id="prop-types">
+      <Section.Heading id="prop-types" link="link-red">
         Prop Types Moved to Separate Package
       </Section.Heading>
       <Section.Content>
@@ -63,7 +63,9 @@ export default _ => (
     <Filler />
 
     <Section>
-      <Section.Heading id="create-class">React.createClass</Section.Heading>
+      <Section.Heading id="create-class" link="link-red">
+        React.createClass
+      </Section.Heading>
       <Section.Content>
         <Section.Part>
           <Definition>
@@ -100,7 +102,9 @@ export default _ => (
     <Filler />
 
     <Section>
-      <Section.Heading id="migration">React Codemod to Migrate</Section.Heading>
+      <Section.Heading id="migration" link="link-red">
+        React Codemod to Migrate
+      </Section.Heading>
       <Section.Content>
         <Section.Part>
           <Definition>
@@ -137,7 +141,9 @@ export default _ => (
     <Filler />
 
     <Section>
-      <Section.Heading id="return-arrays">Return Arrays</Section.Heading>
+      <Section.Heading id="return-arrays" link="link-green">
+        Return Arrays
+      </Section.Heading>
       <Section.Content>
         <Section.Part>
           <Definition>
@@ -174,7 +180,9 @@ export default _ => (
     <Filler />
 
     <Section>
-      <Section.Heading id="return-strings">Return Strings</Section.Heading>
+      <Section.Heading id="return-strings" link="link-green">
+        Return Strings
+      </Section.Heading>
       <Section.Content>
         <Section.Part>
           <Definition>
@@ -211,8 +219,8 @@ export default _ => (
     <Filler />
 
     <Section>
-      <Section.Heading id="widget-error">
-        Widget Error Boundaries
+      <Section.Heading id="component-error" link="link-green">
+        Component Error Boundaries
       </Section.Heading>
       <Section.Content>
         <Section.Part>
@@ -241,80 +249,6 @@ export default _ => (
         <Section.Part>
           <Video
             img="../static/widget-error.png"
-            video="https://www.youtube.com/embed/b6VyUAwslZM?rel=0"
-          />
-        </Section.Part>
-      </Section.Content>
-    </Section>
-
-    <Filler />
-
-    <Section>
-      <Section.Heading id="route-error">Route Error Boundaries</Section.Heading>
-      <Section.Content>
-        <Section.Part>
-          <Definition>
-            Lorem ipsum dolor sit amet, sit case soleat ea, no mei aperiam
-            indoctum constituto, mel summo disputationi et. Ei homero graecis
-            rationibus has, te idque ornatus suavitate qui. Eu vide malis oratio
-            eam, illud modus interesset vix te, nibh assentior pri no. Has ex
-            purto patrioque aliquando, in suscipit nominati est.
-            <Link href="https:/jaketrent.com">Official Docs</Link>
-          </Definition>
-        </Section.Part>
-        <Section.Part>
-          <Diff
-            raw={`
- export default props => (
--  <section className="section">
-+  <section className="section" id={props.id}>
-+    <span className="link">
-+      <a href={['#' + props.id]}>&#128279;</a>
-+    </span>
-     {props.children}
-`}
-          />
-        </Section.Part>
-        <Section.Part>
-          <Video
-            img="../static/route-error.png"
-            video="https://www.youtube.com/embed/b6VyUAwslZM?rel=0"
-          />
-        </Section.Part>
-      </Section.Content>
-    </Section>
-
-    <Filler />
-
-    <Section>
-      <Section.Heading id="server-side">Server Side Streaming</Section.Heading>
-      <Section.Content>
-        <Section.Part>
-          <Definition>
-            Lorem ipsum dolor sit amet, sit case soleat ea, no mei aperiam
-            indoctum constituto, mel summo disputationi et. Ei homero graecis
-            rationibus has, te idque ornatus suavitate qui. Eu vide malis oratio
-            eam, illud modus interesset vix te, nibh assentior pri no. Has ex
-            purto patrioque aliquando, in suscipit nominati est.
-            <Link href="https:/jaketrent.com">Official Docs</Link>
-          </Definition>
-        </Section.Part>
-        <Section.Part>
-          <Diff
-            raw={`
- export default props => (
--  <section className="section">
-+  <section className="section" id={props.id}>
-+    <span className="link">
-+      <a href={['#' + props.id]}>&#128279;</a>
-+    </span>
-     {props.children}
-`}
-          />
-        </Section.Part>
-        <Section.Part>
-          <Video
-            img="../static/server-streaming.png"
             video="https://www.youtube.com/embed/b6VyUAwslZM?rel=0"
           />
         </Section.Part>

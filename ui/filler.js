@@ -86,7 +86,7 @@ export default _ => (
     />
     <style jsx>{`
       .filler {
-        max-width: 650px;
+        max-width: 500px;
         margin: 3em auto 6em auto;
         align-items: center;
         display: block;

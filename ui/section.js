@@ -50,7 +50,7 @@ Section.Part2 = props => (
 
 Section.Heading = props => (
   <h2 className="heading">
-    <a className="link" href={['#' + props.id]}>
+    <a className={props.link} href={['#' + props.id]}>
       {props.children}
     </a>
     <style jsx>{`
@@ -60,8 +60,15 @@ Section.Heading = props => (
         width: 100%;
         max-width: 900px;
       }
-      .link {
+      .link-red {
         position: relative;
+        border-bottom: solid 3px #c91f06;
+        border-radius: 50px 330px 525px 0px/25px 55px 25px 225px;
+      }
+      .link-green {
+        position: relative;
+        border-bottom: solid 3px #3bad24;
+        border-radius: 50px 330px 325px 1px/225px 55px 25px 225px;
       }
       .link:hover:before {
         content: '\\1F517';
