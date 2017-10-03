@@ -186,12 +186,12 @@ export default _ => (
       <Section.Content>
         <Section.Part>
           <Definition>
-            Lorem ipsum dolor sit amet, sit case soleat ea, no mei aperiam
-            indoctum constituto, mel summo disputationi et. Ei homero graecis
-            rationibus has, te idque ornatus suavitate qui. Eu vide malis oratio
-            eam, illud modus interesset vix te, nibh assentior pri no. Has ex
-            purto patrioque aliquando, in suscipit nominati est.
-            <Link href="https:/jaketrent.com">Official Docs</Link>
+            Returning strings is as straightforward as it seems, you can now
+            return strings! You have the ability to return just a string with no
+            HTML tags surrounding the string.
+            <Link href="https://reactjs.org/blog/2017/09/26/react-v16.0.html#new-render-return-types-fragments-and-strings">
+              Official Docs
+            </Link>
           </Definition>
         </Section.Part>
         <Section.Part>
@@ -259,7 +259,7 @@ export default _ => (
 
     <Section>
       <Section.Content>
-        <Section.Part2 title="The Project">
+        <Section.Part2 title="The Project" id="project">
           <Definition>
             Lorem ipsum dolor sit amet, sit case soleat ea, no mei aperiam
             indoctum constituto, mel summo disputationi et. Ei homero graecis
@@ -267,8 +267,7 @@ export default _ => (
             eam, illud modus interesset vix te, nibh assentior pri no. Has ex
             purto patrioque aliquando, in suscipit nominati est. Id alienum
             suscipiantur ius, est ipsum praesent suavitate ne.
-            <Link>Github</Link>
-            <Link>Demo</Link>
+            <Link href="https://github.com/jaketrent/stickerloot">Github</Link>
           </Definition>
         </Section.Part2>
 

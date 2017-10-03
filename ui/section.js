@@ -25,7 +25,7 @@ Section.Part = props => (
 
 Section.Part2 = props => (
   <div className="section-part">
-    <Section.Heading>{props.title}</Section.Heading>
+    <Section.Heading id={props.id}>{props.title}</Section.Heading>
     <div className="body">{props.children}</div>
     <style jsx>{`
       .section-part {

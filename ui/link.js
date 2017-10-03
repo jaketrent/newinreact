@@ -7,6 +7,9 @@ export default props => (
       span {
         text-decoration: underline;
       }
+      .link-container {
+        margin-top: 1em;
+      }
     `}</style>
   </div>
 )

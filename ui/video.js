@@ -37,6 +37,7 @@ export default class extends React.Component {
             width: 100%;
             max-width: 498px;
             align-self: center;
+            cursor: pointer;
           }
           .container {
             position: relative;
