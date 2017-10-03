@@ -478,13 +478,13 @@ object-assign
     function(e, t, n) {
       'use strict'
       function r() {
-        ;(T.ReactReconcileTransaction && b) || c('123')
+        ;(P.ReactReconcileTransaction && b) || c('123')
       }
       function o() {
         this.reinitializeTransaction(),
           (this.dirtyComponentsLength = null),
           (this.callbackQueue = d.getPooled()),
-          (this.reconcileTransaction = T.ReactReconcileTransaction.getPooled(
+          (this.reconcileTransaction = P.ReactReconcileTransaction.getPooled(
             !0
           ))
       }
@@ -565,7 +565,7 @@ object-assign
           ;(this.dirtyComponentsLength = null),
             d.release(this.callbackQueue),
             (this.callbackQueue = null),
-            T.ReactReconcileTransaction.release(this.reconcileTransaction),
+            P.ReactReconcileTransaction.release(this.reconcileTransaction),
             (this.reconcileTransaction = null)
         },
         perform: function(e, t, n) {
@@ -593,9 +593,9 @@ object-assign
             }
           }
         },
-        P = {
+        T = {
           injectReconcileTransaction: function(e) {
-            e || c('126'), (T.ReactReconcileTransaction = e)
+            e || c('126'), (P.ReactReconcileTransaction = e)
           },
           injectBatchingStrategy: function(e) {
             e || c('127'),
@@ -604,15 +604,15 @@ object-assign
               (b = e)
           }
         },
-        T = {
+        P = {
           ReactReconcileTransaction: null,
           batchedUpdates: a,
           enqueueUpdate: s,
           flushBatchedUpdates: k,
-          injection: P,
+          injection: T,
           asap: l
         }
-      e.exports = T
+      e.exports = P
     },
     function(e, t, n) {
       var r = n(42)
@@ -2235,7 +2235,7 @@ object-assign
           x,
           b,
           E = function(e) {
-            if (!p && e in P) return P[e]
+            if (!p && e in T) return T[e]
             switch (e) {
               case 'keys':
               case 'values':
@@ -2250,24 +2250,24 @@ object-assign
           w = t + ' Iterator',
           C = 'values' == v,
           k = !1,
-          P = e.prototype,
-          T = P[d] || P['@@iterator'] || (v && P[v]),
-          N = T || E(v),
+          T = e.prototype,
+          P = T[d] || T['@@iterator'] || (v && T[v]),
+          N = P || E(v),
           S = v ? (C ? E('entries') : N) : void 0,
-          M = 'Array' == t ? P.entries || T : T
+          M = 'Array' == t ? T.entries || P : P
         if (
           (M &&
             (b = f(M.call(new e()))) !== Object.prototype &&
             b.next &&
             (c(b, w, !0), r || u(b, d) || i(b, d, h)),
           C &&
-            T &&
-            'values' !== T.name &&
+            P &&
+            'values' !== P.name &&
             ((k = !0),
             (N = function() {
-              return T.call(this)
+              return P.call(this)
             })),
-          (r && !y) || (!p && !k && P[d]) || i(P, d, N),
+          (r && !y) || (!p && !k && T[d]) || i(T, d, N),
           (s[t] = N),
           (s[w] = h),
           v)
@@ -2280,7 +2280,7 @@ object-assign
             }),
             y)
           )
-            for (x in _) x in P || a(P, x, _[x])
+            for (x in _) x in T || a(T, x, _[x])
           else o(o.P + o.F * (p || k), t, _)
         return _
       }
@@ -3440,9 +3440,9 @@ object-assign
       var w = n(3),
         C = r(w),
         k = n(71),
-        P = r(k),
-        T = n(340),
-        N = r(T),
+        T = r(k),
+        P = n(340),
+        N = r(P),
         S = (function(e) {
           function t() {
             return (
@@ -3466,7 +3466,7 @@ object-assign
             t
           )
         })(C.default.Component)
-      S.contextTypes = { headManager: P.default.object }
+      S.contextTypes = { headManager: T.default.object }
       var M = ['name', 'httpEquiv', 'charSet', 'itemProp', 'property']
       t.default = (0, N.default)(a, u, i)(S)
     },
@@ -4932,9 +4932,9 @@ object-assign
           F._mountImageIntoNode(s, t, e, r, n)
       }
       function u(e, t, n, r) {
-        var o = P.ReactReconcileTransaction.getPooled(!n && x.useCreateElement)
+        var o = T.ReactReconcileTransaction.getPooled(!n && x.useCreateElement)
         o.perform(i, null, e, t, o, n, r),
-          P.ReactReconcileTransaction.release(o)
+          T.ReactReconcileTransaction.release(o)
       }
       function s(e, t, n) {
         for (
@@ -4979,8 +4979,8 @@ object-assign
         w = (n(16), n(282)),
         C = n(38),
         k = n(103),
-        P = n(18),
-        T = n(61),
+        T = n(18),
+        P = n(61),
         N = n(150),
         S = (n(0), n(64)),
         M = n(101),
@@ -5017,7 +5017,7 @@ object-assign
         _renderNewRootComponent: function(e, t, n, r) {
           c(t) || p('37'), g.ensureScrollValueMonitoring()
           var o = N(e, !1)
-          P.batchedUpdates(u, o, t, n, r)
+          T.batchedUpdates(u, o, t, n, r)
           var a = o._instance.rootID
           return (D[a] = o), o
         },
@@ -5045,7 +5045,7 @@ object-assign
           if (e) {
             var s = E.get(e)
             i = s._processChildContext(s._context)
-          } else i = T
+          } else i = P
           var c = d(n)
           if (c) {
             var f = c._currentElement,
@@ -5083,7 +5083,7 @@ object-assign
             l(e), 1 === e.nodeType && e.hasAttribute(I)
             return !1
           }
-          return delete D[t._instance.rootID], P.batchedUpdates(s, t, e, !1), !0
+          return delete D[t._instance.rootID], T.batchedUpdates(s, t, e, !1), !0
         },
         _mountImageIntoNode: function(e, t, n, a, i) {
           if ((c(t) || p('41'), a)) {
@@ -5574,7 +5574,7 @@ object-assign
           o = void 0
         try {
           for (
-            var a, i = (0, c.default)(P);
+            var a, i = (0, c.default)(T);
             !(n = (a = i.next()).done);
             n = !0
           ) {
@@ -5596,14 +5596,14 @@ object-assign
       }
       function a() {
         var e = o()
-        return (P = []), e
+        return (T = []), e
       }
       function i(e) {
-        P.push(e), s()
+        T.push(e), s()
       }
       function u(e) {
-        var t = P.indexOf(e)
-        t < 0 || (P.splice(t, 1), s())
+        var t = T.indexOf(e)
+        t < 0 || (T.splice(t, 1), s())
       }
       function s(e) {
         ;(0, k.default)(o(e))
@@ -5627,8 +5627,8 @@ object-assign
       var w = n(3),
         C = n(349),
         k = r(C),
-        P = [],
-        T = (function(e) {
+        T = [],
+        P = (function(e) {
           function t() {
             return (
               (0, v.default)(this, t),
@@ -5669,7 +5669,7 @@ object-assign
             t
           )
         })(w.Component)
-      t.default = T
+      t.default = P
     },
     function(e, t, n) {
       e.exports = { default: n(344), __esModule: !0 }
@@ -5762,7 +5762,7 @@ object-assign
                           break
                         }
                         return (
-                          (o = { err: t, pathname: j, query: R, asPath: q }),
+                          (o = { err: t, pathname: j, query: R, asPath: H }),
                           (e.next = 8),
                           (0, k.loadGetInitialProps)(G, o)
                         )
@@ -5773,7 +5773,7 @@ object-assign
                         break
                       case 12:
                         g.default.render(
-                          (0, m.createElement)(T.default, { error: t }),
+                          (0, m.createElement)(P.default, { error: t }),
                           W
                         )
                       case 13:
@@ -5879,8 +5879,8 @@ object-assign
         w = n(323),
         C = r(w),
         k = n(70),
-        P = n(335),
-        T = r(P),
+        T = n(335),
+        P = r(T),
         N = n(341),
         S = r(N)
       window.Promise || (window.Promise = f.default)
@@ -5894,22 +5894,22 @@ object-assign
         L = O.chunks,
         U = O.assetPrefix,
         F = M.location,
-        q = (0, k.getURL)(),
-        H = new S.default(D, U)
+        H = (0, k.getURL)(),
+        q = new S.default(D, U)
       window.__NEXT_LOADED_PAGES__.forEach(function(e) {
         var t = e.route,
           n = e.fn
-        H.registerPage(t, n)
+        q.registerPage(t, n)
       }),
         delete window.__NEXT_LOADED_PAGES__,
         window.__NEXT_LOADED_CHUNKS__.forEach(function(e) {
           var t = e.chunkName,
             n = e.fn
-          H.registerChunk(t, n)
+          q.registerChunk(t, n)
         }),
         delete window.__NEXT_LOADED_CHUNKS__,
-        (window.__NEXT_REGISTER_PAGE = H.registerPage.bind(H)),
-        (window.__NEXT_REGISTER_CHUNK = H.registerChunk.bind(H))
+        (window.__NEXT_REGISTER_PAGE = q.registerPage.bind(q)),
+        (window.__NEXT_REGISTER_CHUNK = q.registerChunk.bind(q))
       var V = new _.default(),
         B = document.getElementById('__next'),
         W = document.getElementById('__next-error'),
@@ -5935,7 +5935,7 @@ object-assign
                       e.next = 12
                       break
                     }
-                    return (l = s.value), (e.next = 9), H.waitForChunk(l)
+                    return (l = s.value), (e.next = 9), q.waitForChunk(l)
                   case 9:
                     ;(n = !0), (e.next = 5)
                     break
@@ -5957,13 +5957,13 @@ object-assign
                   case 25:
                     return e.finish(18)
                   case 26:
-                    return (e.next = 28), H.loadPage('/_error')
+                    return (e.next = 28), q.loadPage('/_error')
                   case 28:
                     return (
                       (t.ErrorComponent = G = e.sent),
                       (e.prev = 29),
                       (e.next = 32),
-                      H.loadPage(j)
+                      q.loadPage(j)
                     )
                   case 32:
                     ;(Y = e.sent), (e.next = 39)
@@ -5975,8 +5975,8 @@ object-assign
                       (Y = G)
                   case 39:
                     return (
-                      (t.router = K = (0, x.createRouter)(j, R, q, {
-                        pageLoader: H,
+                      (t.router = K = (0, x.createRouter)(j, R, H, {
+                        pageLoader: q,
                         Component: Y,
                         ErrorComponent: G,
                         err: A
@@ -6104,7 +6104,7 @@ object-assign
           function l(e, t, n) {
             var o = k
             return function(a, i) {
-              if (o === T) throw new Error('Generator is already running')
+              if (o === P) throw new Error('Generator is already running')
               if (o === N) {
                 if ('throw' === a) throw i
                 return m()
@@ -6123,10 +6123,10 @@ object-assign
                   if (o === k) throw ((o = N), n.arg)
                   n.dispatchException(n.arg)
                 } else 'return' === n.method && n.abrupt('return', n.arg)
-                o = T
+                o = P
                 var l = r(e, t, n)
                 if ('normal' === l.type) {
-                  if (((o = n.done ? N : P), l.arg === S)) continue
+                  if (((o = n.done ? N : T), l.arg === S)) continue
                   return { value: l.arg, done: n.done }
                 }
                 'throw' === l.type &&
@@ -6220,8 +6220,8 @@ object-assign
           if (C) return void (w && (e.exports = C))
           ;(C = t.regeneratorRuntime = w ? e.exports : {}), (C.wrap = n)
           var k = 'suspendedStart',
-            P = 'suspendedYield',
-            T = 'executing',
+            T = 'suspendedYield',
+            P = 'executing',
             N = 'completed',
             S = {},
             M = {}
@@ -6585,17 +6585,17 @@ object-assign
         w = s.process,
         C = s.Promise,
         k = 'process' == c(w),
-        P = function() {},
-        T = (o = _.f),
+        T = function() {},
+        P = (o = _.f),
         N = !!(function() {
           try {
             var e = C.resolve(1),
               t = ((e.constructor = {})[n(8)('species')] = function(e) {
-                e(P, P)
+                e(T, T)
               })
             return (
               (k || 'function' == typeof PromiseRejectionEvent) &&
-              e.then(P) instanceof t
+              e.then(T) instanceof t
             )
           } catch (e) {}
         })(),
@@ -6732,7 +6732,7 @@ object-assign
         }),
         (r.prototype = n(87)(C.prototype, {
           then: function(e, t) {
-            var n = T(v(this, C))
+            var n = P(v(this, C))
             return (
               (n.ok = 'function' != typeof e || e),
               (n.fail = 'function' == typeof t && t),
@@ -6753,7 +6753,7 @@ object-assign
             (this.resolve = l(D, e, 1)),
             (this.reject = l(R, e, 1))
         }),
-        (_.f = T = function(e) {
+        (_.f = P = function(e) {
           return S(C, e) ? new a(e) : o(e)
         })),
         f(f.G + f.W + f.F * !N, { Promise: C }),
@@ -6762,7 +6762,7 @@ object-assign
         (i = n(6).Promise),
         f(f.S + f.F * !N, 'Promise', {
           reject: function(e) {
-            var t = T(this)
+            var t = P(this)
             return (0, t.reject)(e), t.promise
           }
         }),
@@ -6777,14 +6777,14 @@ object-assign
               !(
                 N &&
                 n(129)(function(e) {
-                  C.all(e).catch(P)
+                  C.all(e).catch(T)
                 })
               ),
           'Promise',
           {
             all: function(e) {
               var t = this,
-                n = T(t),
+                n = P(t),
                 r = n.resolve,
                 o = n.reject,
                 a = x(function() {
@@ -6806,7 +6806,7 @@ object-assign
             },
             race: function(e) {
               var t = this,
-                n = T(t),
+                n = P(t),
                 r = n.reject,
                 o = x(function() {
                   m(e, !1, function(e) {
@@ -7353,7 +7353,7 @@ object-assign
         }
         function c(e) {
           function n(n, r, a, u, s, c, f) {
-            if (((u = u || P), (c = c || a), f !== i))
+            if (((u = u || T), (c = c || a), f !== i))
               if (t)
                 o(
                   !1,
@@ -7441,7 +7441,7 @@ object-assign
         function p(e) {
           function t(t, n, r, o, a) {
             if (!(t[n] instanceof e)) {
-              var i = e.name || P
+              var i = e.name || T
               return new l(
                 'Invalid ' +
                   o +
@@ -7629,12 +7629,12 @@ object-assign
           }
         }
         function w(e) {
-          return e.constructor && e.constructor.name ? e.constructor.name : P
+          return e.constructor && e.constructor.name ? e.constructor.name : T
         }
         var C = 'function' == typeof Symbol && Symbol.iterator,
           k = '@@iterator',
-          P = '<<anonymous>>',
-          T = {
+          T = '<<anonymous>>',
+          P = {
             array: f('array'),
             bool: f('boolean'),
             func: f('function'),
@@ -7690,9 +7690,9 @@ object-assign
           }
         return (
           (l.prototype = Error.prototype),
-          (T.checkPropTypes = u),
-          (T.PropTypes = T),
-          T
+          (P.checkPropTypes = u),
+          (P.PropTypes = P),
+          P
         )
       }
     },
@@ -8142,16 +8142,16 @@ object-assign
         if (
           (_
             ? (s = o(e))
-            : T
+            : P
               ? i(e, n) && (s = k.compositionEnd)
               : a(e, n) && (s = k.compositionStart),
           !s)
         )
           return null
         E &&
-          (T || s !== k.compositionStart
-            ? s === k.compositionEnd && T && (l = T.getData())
-            : (T = h.getPooled(r)))
+          (P || s !== k.compositionStart
+            ? s === k.compositionEnd && P && (l = P.getData())
+            : (P = h.getPooled(r)))
         var c = m.getPooled(s, t, n, r)
         if (l) c.data = l
         else {
@@ -8165,19 +8165,19 @@ object-assign
           case 'topCompositionEnd':
             return u(t)
           case 'topKeyPress':
-            return t.which !== w ? null : ((P = !0), C)
+            return t.which !== w ? null : ((T = !0), C)
           case 'topTextInput':
             var n = t.data
-            return n === C && P ? null : n
+            return n === C && T ? null : n
           default:
             return null
         }
       }
       function c(e, t) {
-        if (T) {
+        if (P) {
           if ('topCompositionEnd' === e || (!_ && i(e, t))) {
-            var n = T.getData()
-            return h.release(T), (T = null), n
+            var n = P.getData()
+            return h.release(P), (P = null), n
           }
           return null
         }
@@ -8279,8 +8279,8 @@ object-assign
             ]
           }
         },
-        P = !1,
-        T = null,
+        T = !1,
+        P = null,
         N = {
           eventTypes: k,
           extractEvents: function(e, t, n, r) {
@@ -8347,7 +8347,7 @@ object-assign
     function(e, t, n) {
       'use strict'
       function r(e, t, n) {
-        var r = P.getPooled(O.change, e, t, n)
+        var r = T.getPooled(O.change, e, t, n)
         return (r.type = 'change'), E.accumulateTwoPhaseDispatches(r), r
       }
       function o(e) {
@@ -8368,7 +8368,7 @@ object-assign
         I && (I.detachEvent('onchange', a), (I = null), (A = null))
       }
       function l(e, t) {
-        var n = T.updateValueIfChanged(e),
+        var n = P.updateValueIfChanged(e),
           r = !0 === t.simulated && D._allowSimulatedPassThrough
         if (n || r) return e
       }
@@ -8426,8 +8426,8 @@ object-assign
         w = n(10),
         C = n(5),
         k = n(18),
-        P = n(23),
-        T = n(142),
+        T = n(23),
+        P = n(142),
         N = n(91),
         S = n(92),
         M = n(143),
@@ -8994,7 +8994,7 @@ object-assign
           var o = e._hostContainerInfo,
             a = o._node && o._node.nodeType === z,
             u = a ? o._node : o._ownerDocument
-          q(t, u),
+          H(t, u),
             r
               .getReactMountReady()
               .enqueue(i, { inst: e, registrationName: t, listener: n })
@@ -9027,7 +9027,7 @@ object-assign
           case 'iframe':
           case 'object':
             e._wrapperState.listeners = [
-              P.trapBubbledEvent('topLoad', 'load', t)
+              T.trapBubbledEvent('topLoad', 'load', t)
             ]
             break
           case 'video':
@@ -9035,30 +9035,30 @@ object-assign
             e._wrapperState.listeners = []
             for (var n in K)
               K.hasOwnProperty(n) &&
-                e._wrapperState.listeners.push(P.trapBubbledEvent(n, K[n], t))
+                e._wrapperState.listeners.push(T.trapBubbledEvent(n, K[n], t))
             break
           case 'source':
             e._wrapperState.listeners = [
-              P.trapBubbledEvent('topError', 'error', t)
+              T.trapBubbledEvent('topError', 'error', t)
             ]
             break
           case 'img':
             e._wrapperState.listeners = [
-              P.trapBubbledEvent('topError', 'error', t),
-              P.trapBubbledEvent('topLoad', 'load', t)
+              T.trapBubbledEvent('topError', 'error', t),
+              T.trapBubbledEvent('topLoad', 'load', t)
             ]
             break
           case 'form':
             e._wrapperState.listeners = [
-              P.trapBubbledEvent('topReset', 'reset', t),
-              P.trapBubbledEvent('topSubmit', 'submit', t)
+              T.trapBubbledEvent('topReset', 'reset', t),
+              T.trapBubbledEvent('topSubmit', 'submit', t)
             ]
             break
           case 'input':
           case 'select':
           case 'textarea':
             e._wrapperState.listeners = [
-              P.trapBubbledEvent('topInvalid', 'invalid', t)
+              T.trapBubbledEvent('topInvalid', 'invalid', t)
             ]
         }
       }
@@ -9099,8 +9099,8 @@ object-assign
         w = n(148),
         C = n(51),
         k = n(88),
-        P = n(66),
-        T = n(136),
+        T = n(66),
+        P = n(136),
         N = n(5),
         S = n(242),
         M = n(244),
@@ -9110,11 +9110,11 @@ object-assign
         j = n(253),
         R = (n(12), n(65)),
         D = (n(0), n(92), n(100), n(142)),
-        L = (n(104), n(1), T),
+        L = (n(104), n(1), P),
         U = C.deleteListener,
         F = N.getNodeFromInstance,
-        q = P.listenTo,
-        H = k.registrationNameModules,
+        H = T.listenTo,
+        q = k.registrationNameModules,
         V = { string: !0, number: !0 },
         B = '__html',
         W = {
@@ -9279,7 +9279,7 @@ object-assign
               if (t.hasOwnProperty(r)) {
                 var o = t[r]
                 if (null != o)
-                  if (H.hasOwnProperty(r)) o && a(this, r, o, e)
+                  if (q.hasOwnProperty(r)) o && a(this, r, o, e)
                   else {
                     'style' === r &&
                       (o && (o = this._previousStyleCopy = g({}, t.style)),
@@ -9372,7 +9372,7 @@ object-assign
                     u.hasOwnProperty(o) && ((i = i || {}), (i[o] = ''))
                   this._previousStyleCopy = null
                 } else
-                  H.hasOwnProperty(r)
+                  q.hasOwnProperty(r)
                     ? e[r] && U(this, r)
                     : h(this._tag, e)
                       ? W.hasOwnProperty(r) ||
@@ -9402,7 +9402,7 @@ object-assign
                         l[o] !== s[o] &&
                         ((i = i || {}), (i[o] = s[o]))
                   } else i = s
-                else if (H.hasOwnProperty(r))
+                else if (q.hasOwnProperty(r))
                   s ? a(this, r, s, n) : l && U(this, r)
                 else if (h(this._tag, t))
                   W.hasOwnProperty(r) || w.setValueForAttribute(F(this), r, s)
@@ -12196,8 +12196,8 @@ object-assign
         w = r(E),
         C = n(172),
         k = r(C),
-        P = n(322),
-        T = r(P),
+        T = n(322),
+        P = r(T),
         N = n(70),
         S = n(162),
         M = (function() {
@@ -12217,7 +12217,7 @@ object-assign
                 (this.components[this.route] = { Component: u, err: l }),
               (this.events = new w.default()),
               (this.pageLoader = i),
-              (this.prefetchQueue = new T.default({ concurrency: 2 })),
+              (this.prefetchQueue = new P.default({ concurrency: 2 })),
               (this.ErrorComponent = s),
               (this.pathname = t),
               (this.query = n),
@@ -12909,10 +12909,10 @@ object-assign
         w = n(56),
         C = n(301),
         k = n(165),
-        P = n(15),
-        T = n(44),
+        T = n(15),
+        P = n(44),
         N = k.f,
-        S = P.f,
+        S = T.f,
         M = C.f,
         O = r.Symbol,
         I = r.JSON,
@@ -12923,8 +12923,8 @@ object-assign
         L = c('symbol-registry'),
         U = c('symbols'),
         F = c('op-symbols'),
-        q = Object.prototype,
-        H = 'function' == typeof O,
+        H = Object.prototype,
+        q = 'function' == typeof O,
         V = r.QObject,
         B = !V || !V.prototype || !V.prototype.findChild,
         W =
@@ -12942,8 +12942,8 @@ object-assign
             )
           })
             ? function(e, t, n) {
-                var r = N(q, t)
-                r && delete q[t], S(e, t, n), r && e !== q && S(q, t, r)
+                var r = N(H, t)
+                r && delete H[t], S(e, t, n), r && e !== H && S(H, t, r)
               }
             : S,
         z = function(e) {
@@ -12951,7 +12951,7 @@ object-assign
           return (t._k = e), t
         },
         K =
-          H && 'symbol' == typeof O.iterator
+          q && 'symbol' == typeof O.iterator
             ? function(e) {
                 return 'symbol' == typeof e
               }
@@ -12960,7 +12960,7 @@ object-assign
               },
         G = function(e, t, n) {
           return (
-            e === q && G(F, t, n),
+            e === H && G(F, t, n),
             _(e),
             (t = b(t, !0)),
             _(n),
@@ -12985,12 +12985,12 @@ object-assign
         Q = function(e) {
           var t = D.call(this, (e = b(e, !0)))
           return (
-            !(this === q && o(U, e) && !o(F, e)) &&
+            !(this === H && o(U, e) && !o(F, e)) &&
             (!(t || !o(this, e) || !o(U, e) || (o(this, j) && this[j][e])) || t)
           )
         },
         Z = function(e, t) {
-          if (((e = x(e)), (t = b(t, !0)), e !== q || !o(U, t) || o(F, t))) {
+          if (((e = x(e)), (t = b(t, !0)), e !== H || !o(U, t) || o(F, t))) {
             var n = N(e, t)
             return (
               !n || !o(U, t) || (o(e, j) && e[j][t]) || (n.enumerable = !0), n
@@ -13004,37 +13004,37 @@ object-assign
         },
         J = function(e) {
           for (
-            var t, n = e === q, r = M(n ? F : x(e)), a = [], i = 0;
+            var t, n = e === H, r = M(n ? F : x(e)), a = [], i = 0;
             r.length > i;
 
           )
-            !o(U, (t = r[i++])) || (n && !o(q, t)) || a.push(U[t])
+            !o(U, (t = r[i++])) || (n && !o(H, t)) || a.push(U[t])
           return a
         }
-      H ||
+      q ||
         ((O = function() {
           if (this instanceof O) throw TypeError('Symbol is not a constructor!')
           var e = d(arguments.length > 0 ? arguments[0] : void 0),
             t = function(n) {
-              this === q && t.call(F, n),
+              this === H && t.call(F, n),
                 o(this, j) && o(this[j], e) && (this[j][e] = !1),
                 W(this, e, E(1, n))
             }
-          return a && B && W(q, e, { configurable: !0, set: t }), z(e)
+          return a && B && W(H, e, { configurable: !0, set: t }), z(e)
         }),
         u(O.prototype, 'toString', function() {
           return this._k
         }),
         (k.f = Z),
-        (P.f = G),
+        (T.f = G),
         (n(164).f = C.f = $),
         (n(68).f = Q),
         (n(110).f = J),
-        a && !n(55) && u(q, 'propertyIsEnumerable', Q, !0),
+        a && !n(55) && u(H, 'propertyIsEnumerable', Q, !0),
         (h.f = function(e) {
           return z(p(e))
         })),
-        i(i.G + i.W + i.F * !H, { Symbol: O })
+        i(i.G + i.W + i.F * !q, { Symbol: O })
       for (
         var ee = 'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'.split(
             ','
@@ -13044,8 +13044,8 @@ object-assign
 
       )
         p(ee[te++])
-      for (var ne = T(p.store), re = 0; ne.length > re; ) m(ne[re++])
-      i(i.S + i.F * !H, 'Symbol', {
+      for (var ne = P(p.store), re = 0; ne.length > re; ) m(ne[re++])
+      i(i.S + i.F * !q, 'Symbol', {
         for: function(e) {
           return o(L, (e += '')) ? L[e] : (L[e] = O(e))
         },
@@ -13060,7 +13060,7 @@ object-assign
           B = !1
         }
       }),
-        i(i.S + i.F * !H, 'Object', {
+        i(i.S + i.F * !q, 'Object', {
           create: X,
           defineProperty: G,
           defineProperties: Y,
@@ -13072,7 +13072,7 @@ object-assign
           i(
             i.S +
               i.F *
-                (!H ||
+                (!q ||
                   l(function() {
                     var e = O()
                     return (
@@ -13419,9 +13419,9 @@ object-assign
           !C || (p && b[p]) || ((u = u.substr(2)), (this.slashes = !0))
         }
         if (!b[p] && (C || (p && !E[p]))) {
-          for (var k = -1, P = 0; P < g.length; P++) {
-            var T = u.indexOf(g[P])
-            ;-1 !== T && (-1 === k || T < k) && (k = T)
+          for (var k = -1, T = 0; T < g.length; T++) {
+            var P = u.indexOf(g[T])
+            ;-1 !== P && (-1 === k || P < k) && (k = P)
           }
           var N, S
           ;(S = -1 === k ? u.lastIndexOf('@') : u.lastIndexOf('@', k)),
@@ -13430,9 +13430,9 @@ object-assign
               (u = u.slice(S + 1)),
               (this.auth = decodeURIComponent(N))),
             (k = -1)
-          for (var P = 0; P < v.length; P++) {
-            var T = u.indexOf(v[P])
-            ;-1 !== T && (-1 === k || T < k) && (k = T)
+          for (var T = 0; T < v.length; T++) {
+            var P = u.indexOf(v[T])
+            ;-1 !== P && (-1 === k || P < k) && (k = P)
           }
           ;-1 === k && (k = u.length),
             (this.host = u.slice(0, k)),
@@ -13444,17 +13444,17 @@ object-assign
             ']' === this.hostname[this.hostname.length - 1]
           if (!M)
             for (
-              var O = this.hostname.split(/\./), P = 0, I = O.length;
-              P < I;
-              P++
+              var O = this.hostname.split(/\./), T = 0, I = O.length;
+              T < I;
+              T++
             ) {
-              var A = O[P]
+              var A = O[T]
               if (A && !A.match(y)) {
                 for (var j = '', R = 0, D = A.length; R < D; R++)
                   A.charCodeAt(R) > 127 ? (j += 'x') : (j += A[R])
                 if (!j.match(y)) {
-                  var L = O.slice(0, P),
-                    U = O.slice(P + 1),
+                  var L = O.slice(0, T),
+                    U = O.slice(T + 1),
                     F = A.match(_)
                   F && (L.push(F[1]), U.unshift(F[2])),
                     U.length && (u = '/' + U.join('.') + u),
@@ -13467,9 +13467,9 @@ object-assign
             ? (this.hostname = '')
             : (this.hostname = this.hostname.toLowerCase()),
             M || (this.hostname = s.toASCII(this.hostname))
-          var q = this.port ? ':' + this.port : '',
-            H = this.hostname || ''
-          ;(this.host = H + q),
+          var H = this.port ? ':' + this.port : '',
+            q = this.hostname || ''
+          ;(this.host = q + H),
             (this.href += this.host),
             M &&
               ((this.hostname = this.hostname.substr(
@@ -13479,8 +13479,8 @@ object-assign
               '/' !== u[0] && (u = '/' + u))
         }
         if (!x[h])
-          for (var P = 0, I = m.length; P < I; P++) {
-            var V = m[P]
+          for (var T = 0, I = m.length; T < I; T++) {
+            var V = m[T]
             if (-1 !== u.indexOf(V)) {
               var B = encodeURIComponent(V)
               B === V && (B = escape(V)), (u = u.split(V).join(B))
@@ -13500,9 +13500,9 @@ object-assign
           E[h] && this.hostname && !this.pathname && (this.pathname = '/'),
           this.pathname || this.search)
         ) {
-          var q = this.pathname || '',
+          var H = this.pathname || '',
             K = this.search || ''
-          this.path = q + K
+          this.path = H + K
         }
         return (this.href = this.format()), this
       }),
@@ -13674,20 +13674,20 @@ object-assign
               n
             )
           for (
-            var P = w.slice(-1)[0],
-              T =
+            var T = w.slice(-1)[0],
+              P =
                 ((n.host || e.host || w.length > 1) &&
-                  ('.' === P || '..' === P)) ||
-                '' === P,
+                  ('.' === T || '..' === T)) ||
+                '' === T,
               N = 0,
               S = w.length;
             S >= 0;
             S--
           )
-            (P = w[S]),
-              '.' === P
+            (T = w[S]),
+              '.' === T
                 ? w.splice(S, 1)
-                : '..' === P
+                : '..' === T
                   ? (w.splice(S, 1), N++)
                   : N && (w.splice(S, 1), N--)
           if (!_ && !x) for (; N--; N) w.unshift('..')
@@ -13695,7 +13695,7 @@ object-assign
             '' === w[0] ||
             (w[0] && '/' === w[0].charAt(0)) ||
             w.unshift(''),
-            T && '/' !== w.join('/').substr(-1) && w.push('')
+            P && '/' !== w.join('/').substr(-1) && w.push('')
           var M = '' === w[0] || (w[0] && '/' === w[0].charAt(0))
           if (C) {
             n.hostname = n.host = M ? '' : w.length ? w.shift() : ''
@@ -13802,8 +13802,8 @@ object-assign
               m = [],
               v = e.length,
               g = 0,
-              y = T,
-              _ = P
+              y = P,
+              _ = T
             for (n = e.lastIndexOf(N), n < 0 && (n = 0), r = 0; r < n; ++r)
               e.charCodeAt(r) >= 128 && i('not-basic'), m.push(e.charCodeAt(r))
             for (o = n > 0 ? n + 1 : 0; o < v; ) {
@@ -13844,7 +13844,7 @@ object-assign
               y,
               _,
               C = []
-            for (e = l(e), v = e.length, t = T, n = 0, a = P, u = 0; u < v; ++u)
+            for (e = l(e), v = e.length, t = P, n = 0, a = T, u = 0; u < v; ++u)
               (m = e[u]) < 128 && C.push(R(m))
             for (r = o = C.length, o && C.push(N); r < v; ) {
               for (s = x, u = 0; u < v; ++u) (m = e[u]) >= t && m < s && (s = m)
@@ -13893,8 +13893,8 @@ object-assign
             w = 26,
             C = 38,
             k = 700,
-            P = 72,
-            T = 128,
+            T = 72,
+            P = 128,
             N = '-',
             S = /^xn--/,
             M = /[^\x20-\x7E]/,
@@ -15049,8 +15049,8 @@ object-assign
         w = r(E),
         C = n(358),
         k = r(C),
-        P = n(359),
-        T = r(P),
+        T = n(359),
+        P = r(T),
         N = n(360),
         S = r(N),
         M = n(361),
@@ -15069,18 +15069,18 @@ object-assign
           a.default.createElement(O.default, null),
           a.default.createElement(u.default, null),
           a.default.createElement(
-            T.default,
+            P.default,
             null,
             a.default.createElement(
-              T.default.Heading,
-              { id: 'prop-types' },
+              P.default.Heading,
+              { id: 'prop-types', link: 'link-red' },
               'Prop Types Moved to Separate Package'
             ),
             a.default.createElement(
-              T.default.Content,
+              P.default.Content,
               null,
               a.default.createElement(
-                T.default.Part,
+                P.default.Part,
                 null,
                 a.default.createElement(
                   f.default,
@@ -15094,7 +15094,7 @@ object-assign
                 )
               ),
               a.default.createElement(
-                T.default.Part,
+                P.default.Part,
                 null,
                 a.default.createElement(p.default, {
                   raw:
@@ -15102,7 +15102,7 @@ object-assign
                 })
               ),
               a.default.createElement(
-                T.default.Part,
+                P.default.Part,
                 null,
                 a.default.createElement(R.default, {
                   img: '../static/prop-types.png',
@@ -15113,18 +15113,18 @@ object-assign
           ),
           a.default.createElement(m.default, null),
           a.default.createElement(
-            T.default,
+            P.default,
             null,
             a.default.createElement(
-              T.default.Heading,
-              { id: 'create-class' },
+              P.default.Heading,
+              { id: 'create-class', link: 'link-red' },
               'React.createClass'
             ),
             a.default.createElement(
-              T.default.Content,
+              P.default.Content,
               null,
               a.default.createElement(
-                T.default.Part,
+                P.default.Part,
                 null,
                 a.default.createElement(
                   f.default,
@@ -15138,7 +15138,7 @@ object-assign
                 )
               ),
               a.default.createElement(
-                T.default.Part,
+                P.default.Part,
                 null,
                 a.default.createElement(p.default, {
                   raw:
@@ -15146,7 +15146,7 @@ object-assign
                 })
               ),
               a.default.createElement(
-                T.default.Part,
+                P.default.Part,
                 null,
                 a.default.createElement(R.default, {
                   img: '../static/createclass.png',
@@ -15157,18 +15157,18 @@ object-assign
           ),
           a.default.createElement(m.default, null),
           a.default.createElement(
-            T.default,
+            P.default,
             null,
             a.default.createElement(
-              T.default.Heading,
-              { id: 'migration' },
+              P.default.Heading,
+              { id: 'migration', link: 'link-red' },
               'React Codemod to Migrate'
             ),
             a.default.createElement(
-              T.default.Content,
+              P.default.Content,
               null,
               a.default.createElement(
-                T.default.Part,
+                P.default.Part,
                 null,
                 a.default.createElement(
                   f.default,
@@ -15182,7 +15182,7 @@ object-assign
                 )
               ),
               a.default.createElement(
-                T.default.Part,
+                P.default.Part,
                 null,
                 a.default.createElement(p.default, {
                   raw:
@@ -15190,7 +15190,7 @@ object-assign
                 })
               ),
               a.default.createElement(
-                T.default.Part,
+                P.default.Part,
                 null,
                 a.default.createElement(R.default, {
                   img: '../static/migration.png',
@@ -15201,18 +15201,18 @@ object-assign
           ),
           a.default.createElement(m.default, null),
           a.default.createElement(
-            T.default,
+            P.default,
             null,
             a.default.createElement(
-              T.default.Heading,
-              { id: 'return-arrays' },
+              P.default.Heading,
+              { id: 'return-arrays', link: 'link-green' },
               'Return Arrays'
             ),
             a.default.createElement(
-              T.default.Content,
+              P.default.Content,
               null,
               a.default.createElement(
-                T.default.Part,
+                P.default.Part,
                 null,
                 a.default.createElement(
                   f.default,
@@ -15226,7 +15226,7 @@ object-assign
                 )
               ),
               a.default.createElement(
-                T.default.Part,
+                P.default.Part,
                 null,
                 a.default.createElement(p.default, {
                   raw:
@@ -15234,7 +15234,7 @@ object-assign
                 })
               ),
               a.default.createElement(
-                T.default.Part,
+                P.default.Part,
                 null,
                 a.default.createElement(R.default, {
                   img: '../static/return-arrays.png',
@@ -15245,32 +15245,35 @@ object-assign
           ),
           a.default.createElement(m.default, null),
           a.default.createElement(
-            T.default,
+            P.default,
             null,
             a.default.createElement(
-              T.default.Heading,
-              { id: 'return-strings' },
+              P.default.Heading,
+              { id: 'return-strings', link: 'link-green' },
               'Return Strings'
             ),
             a.default.createElement(
-              T.default.Content,
+              P.default.Content,
               null,
               a.default.createElement(
-                T.default.Part,
+                P.default.Part,
                 null,
                 a.default.createElement(
                   f.default,
                   null,
-                  'Lorem ipsum dolor sit amet, sit case soleat ea, no mei aperiam indoctum constituto, mel summo disputationi et. Ei homero graecis rationibus has, te idque ornatus suavitate qui. Eu vide malis oratio eam, illud modus interesset vix te, nibh assentior pri no. Has ex purto patrioque aliquando, in suscipit nominati est.',
+                  'Returning strings is as straightforward as it seems, you can now return strings! You have the ability to return just a string with no HTML tags surrounding the string.',
                   a.default.createElement(
                     k.default,
-                    { href: 'https:/jaketrent.com' },
+                    {
+                      href:
+                        'https://reactjs.org/blog/2017/09/26/react-v16.0.html#new-render-return-types-fragments-and-strings'
+                    },
                     'Official Docs'
                   )
                 )
               ),
               a.default.createElement(
-                T.default.Part,
+                P.default.Part,
                 null,
                 a.default.createElement(p.default, {
                   raw:
@@ -15278,7 +15281,7 @@ object-assign
                 })
               ),
               a.default.createElement(
-                T.default.Part,
+                P.default.Part,
                 null,
                 a.default.createElement(R.default, {
                   img: '../static/return-strings.png',
@@ -15289,18 +15292,18 @@ object-assign
           ),
           a.default.createElement(m.default, null),
           a.default.createElement(
-            T.default,
+            P.default,
             null,
             a.default.createElement(
-              T.default.Heading,
-              { id: 'widget-error' },
-              'Widget Error Boundaries'
+              P.default.Heading,
+              { id: 'component-error', link: 'link-green' },
+              'Component Error Boundaries'
             ),
             a.default.createElement(
-              T.default.Content,
+              P.default.Content,
               null,
               a.default.createElement(
-                T.default.Part,
+                P.default.Part,
                 null,
                 a.default.createElement(
                   f.default,
@@ -15314,7 +15317,7 @@ object-assign
                 )
               ),
               a.default.createElement(
-                T.default.Part,
+                P.default.Part,
                 null,
                 a.default.createElement(p.default, {
                   raw:
@@ -15322,7 +15325,7 @@ object-assign
                 })
               ),
               a.default.createElement(
-                T.default.Part,
+                P.default.Part,
                 null,
                 a.default.createElement(R.default, {
                   img: '../static/widget-error.png',
@@ -15333,112 +15336,27 @@ object-assign
           ),
           a.default.createElement(m.default, null),
           a.default.createElement(
-            T.default,
+            P.default,
             null,
             a.default.createElement(
-              T.default.Heading,
-              { id: 'route-error' },
-              'Route Error Boundaries'
-            ),
-            a.default.createElement(
-              T.default.Content,
+              P.default.Content,
               null,
               a.default.createElement(
-                T.default.Part,
-                null,
-                a.default.createElement(
-                  f.default,
-                  null,
-                  'Lorem ipsum dolor sit amet, sit case soleat ea, no mei aperiam indoctum constituto, mel summo disputationi et. Ei homero graecis rationibus has, te idque ornatus suavitate qui. Eu vide malis oratio eam, illud modus interesset vix te, nibh assentior pri no. Has ex purto patrioque aliquando, in suscipit nominati est.',
-                  a.default.createElement(
-                    k.default,
-                    { href: 'https:/jaketrent.com' },
-                    'Official Docs'
-                  )
-                )
-              ),
-              a.default.createElement(
-                T.default.Part,
-                null,
-                a.default.createElement(p.default, {
-                  raw:
-                    '\n export default props => (\n-  <section className="section">\n+  <section className="section" id={props.id}>\n+    <span className="link">\n+      <a href={[\'#\' + props.id]}>&#128279;</a>\n+    </span>\n     {props.children}\n'
-                })
-              ),
-              a.default.createElement(
-                T.default.Part,
-                null,
-                a.default.createElement(R.default, {
-                  img: '../static/route-error.png',
-                  video: 'https://www.youtube.com/embed/b6VyUAwslZM?rel=0'
-                })
-              )
-            )
-          ),
-          a.default.createElement(m.default, null),
-          a.default.createElement(
-            T.default,
-            null,
-            a.default.createElement(
-              T.default.Heading,
-              { id: 'server-side' },
-              'Server Side Streaming'
-            ),
-            a.default.createElement(
-              T.default.Content,
-              null,
-              a.default.createElement(
-                T.default.Part,
-                null,
-                a.default.createElement(
-                  f.default,
-                  null,
-                  'Lorem ipsum dolor sit amet, sit case soleat ea, no mei aperiam indoctum constituto, mel summo disputationi et. Ei homero graecis rationibus has, te idque ornatus suavitate qui. Eu vide malis oratio eam, illud modus interesset vix te, nibh assentior pri no. Has ex purto patrioque aliquando, in suscipit nominati est.',
-                  a.default.createElement(
-                    k.default,
-                    { href: 'https:/jaketrent.com' },
-                    'Official Docs'
-                  )
-                )
-              ),
-              a.default.createElement(
-                T.default.Part,
-                null,
-                a.default.createElement(p.default, {
-                  raw:
-                    '\n export default props => (\n-  <section className="section">\n+  <section className="section" id={props.id}>\n+    <span className="link">\n+      <a href={[\'#\' + props.id]}>&#128279;</a>\n+    </span>\n     {props.children}\n'
-                })
-              ),
-              a.default.createElement(
-                T.default.Part,
-                null,
-                a.default.createElement(R.default, {
-                  img: '../static/server-streaming.png',
-                  video: 'https://www.youtube.com/embed/b6VyUAwslZM?rel=0'
-                })
-              )
-            )
-          ),
-          a.default.createElement(m.default, null),
-          a.default.createElement(
-            T.default,
-            null,
-            a.default.createElement(
-              T.default.Content,
-              null,
-              a.default.createElement(
-                T.default.Part2,
-                { title: 'The Project' },
+                P.default.Part2,
+                { title: 'The Project', id: 'project' },
                 a.default.createElement(
                   f.default,
                   null,
                   'Lorem ipsum dolor sit amet, sit case soleat ea, no mei aperiam indoctum constituto, mel summo disputationi et. Ei homero graecis rationibus has, te idque ornatus suavitate qui. Eu vide malis oratio eam, illud modus interesset vix te, nibh assentior pri no. Has ex purto patrioque aliquando, in suscipit nominati est. Id alienum suscipiantur ius, est ipsum praesent suavitate ne.',
-                  a.default.createElement(k.default, null, 'Github'),
-                  a.default.createElement(k.default, null, 'Demo')
+                  a.default.createElement(
+                    k.default,
+                    { href: 'https://github.com/jaketrent/stickerloot' },
+                    'Github'
+                  )
                 )
               ),
               a.default.createElement(
-                T.default.Part,
+                P.default.Part,
                 null,
                 a.default.createElement(w.default, {
                   img: '../static/pinata8bit.png'
@@ -15746,11 +15664,11 @@ object-assign
             xmlns: 'http://www.w3.org/2000/svg',
             viewBox: '0 0 925.67 108.13',
             className: 'filler',
-            'data-jsx': 860039912
+            'data-jsx': 807499726
           },
           u.default.createElement(
             'title',
-            { 'data-jsx': 860039912 },
+            { 'data-jsx': 807499726 },
             'filler-filigree'
           ),
           u.default.createElement('path', {
@@ -15758,55 +15676,55 @@ object-assign
             d:
               'M664.28,129.28c6-12.07,25.39-37.13,50.1-61.06,14-13.55,34.32-14.23,38.29-11.3s4.74,6.44,4.83,7.92c.17,2.67,0,5.6-1.67,7.27-2.64,2.63-9.17,7.4-9.67.73-.2-2.71,2.82-.89,4.17-2.67C760,57.39,733.5,57.31,711,78A380.78,380.78,0,0,0,664.28,129.28Z',
             transform: 'translate(-111.96 -53.42)',
-            'data-jsx': 860039912
+            'data-jsx': 807499726
           }),
           u.default.createElement('path', {
             className: 'a',
             d:
               'M630.6,155.43s47.81-39.67,177.55-33.33c98.32,4.8,97.87,32.21,180.51,31.71,58.47-.35,48.92-21.89,47.58-33.38-1.45-12.41-1.16-21-13.81-29.92-5.4-3.79-23,.36-25.35,8.89-3.33,11.85-.07,23.43,3.67,26.85,7.67,7,19.56-14.43,15.42-15.79-7.14-2.35-2.29,4.67-2.29,4.67l-5.48,5.13s-6.07-2.48-5.48-7.25l.21-5.33c-.25-2.18,2.46-9.37,4.29-10.58,2.27-1.5,11.24-1.91,13.83-.17,10.79,7.25,4.75,28.2,3.33,37.89s-20.78,15-30.85,15.25c-81.88,2-66.64-35.43-188.89-37.29C682.05,110.89,630.6,155.43,630.6,155.43Z',
             transform: 'translate(-111.96 -53.42)',
-            'data-jsx': 860039912
+            'data-jsx': 807499726
           }),
           u.default.createElement('path', {
             className: 'a',
             d: 'M842.67,259',
             transform: 'translate(-111.96 -53.42)',
-            'data-jsx': 860039912
+            'data-jsx': 807499726
           }),
           u.default.createElement('path', {
             className: 'a',
             d:
               'M637,86c3.83,2.05,4.89,4.78,5,6.43.2,2.73-2.3,9.49-8.79,9.78-3.72.17-2.53-2.76-2.17-4.8.27-1.48,4.55-2.12,3.76-.79a3.12,3.12,0,0,0-.33,2.88c.14.34.65.37,1,0,2.32-2,9.29-8.74-.32-11.87-1.57-.51-11.34,5.59-12.31,7.06-1.13,1.7-1.55,1.16-3.34,7.73-1.38,5.06.84-7.1,2.51-8.58C624.92,91.35,635.79,85.34,637,86Z',
             transform: 'translate(-111.96 -53.42)',
-            'data-jsx': 860039912
+            'data-jsx': 807499726
           }),
           u.default.createElement('path', {
             className: 'a',
             d:
               'M654.13,124.38c-2-9.26-6.2-10.35-10.12-12.12-4.71-2.13-9.19-2.79-12.5-1.43-4.52,1.85-6.52,4.86-4.25,8.43,2.63,4.13,11.31-10.06,7.5,3.75-.62,2.26-9.75,2.75-11.75-1.75-1.59-3.58-2.19-7.12,1.15-10.43s10.83-4.41,13.48-4.95,11.19,4.76,14,6.63,5.31,8.94,6.38,10.5,7.13,13-12,25.25a87.39,87.39,0,0,1-44.67,13.3S660.43,152.9,654.13,124.38Z',
             transform: 'translate(-111.96 -53.42)',
-            'data-jsx': 860039912
+            'data-jsx': 807499726
           }),
           u.default.createElement('path', {
             className: 'a',
             d:
               'M647.12,75.82c4.45,2.24,4.4,4.47,4.74,6.68.4,2.65.08,5-1.1,6.48-1.61,2-3.45,2.65-5,1-1.73-1.86,6.82-4.38-.83-4.27-1.25,0-2.84,4.55-.82,6.15,1.6,1.27,3.33,2,5.52.78s3.85-4.88,4.52-6.14-.8-6.26-1.35-7.91-3.81-3.84-4.46-4.58-5.63-5.28-14.72,2.75a46.64,46.64,0,0,0-13.38,20.76S633.4,68.93,647.12,75.82Z',
             transform: 'translate(-111.96 -53.42)',
-            'data-jsx': 860039912
+            'data-jsx': 807499726
           }),
           u.default.createElement('path', {
             className: 'a',
             d:
               'M675.75,120.25c6.15-7.1,28.41-17.5,50.17-29.83,12.14-6.88,19.16-5.42,22.34-4s5.52,4,6,5.58a5.91,5.91,0,0,1-1.17,5.33c-.93,1.07-6,3.72-5.17-.92.34-1.89,3.08.6,3.09-1,0-8.23-13.6-7.86-29.92,0C697.77,106.78,675.48,119.26,675.75,120.25Z',
             transform: 'translate(-111.96 -53.42)',
-            'data-jsx': 860039912
+            'data-jsx': 807499726
           }),
           u.default.createElement('path', {
             className: 'a',
             d:
               'M615.66,88.54c-2.22-6.39-11-10.15-22.47-10.36-2-13.33-6.5-22.92-12.21-24.51a6.59,6.59,0,0,0-4,.17l1.52,4.39a3.46,3.46,0,0,1,2-.14c2.75.76,5.75,6.27,7.61,14,.46,1.91.85,4,1.18,6.07a71,71,0,0,0-11.12,1.46,99.76,99.76,0,0,0-10.21-7.48c3.25-7.81,7.12-12.81,10.52-14l-1.52-4.39c-4.49,1.56-9,7.46-12.66,16.21-8.26-4.59-15.46-6.36-20-4.8l1.52,4.39c3.38-1.17,9.52.33,16.91,4.4a96.72,96.72,0,0,0-3.34,12.16,68.4,68.4,0,0,0-9.64,5.77c-1.06-1.84-2-3.65-2.83-5.41-3.38-7.25-4.46-13.42-2.79-15.74a3.33,3.33,0,0,1,1.7-1.16l-1.52-4.39A6.7,6.7,0,0,0,541,67.62c-3.48,4.78-1.06,15.08,5.64,26.73-8.85,7.31-13.37,15.64-11.15,22s11,10.15,22.47,10.36c2,13.33,6.5,22.92,12.21,24.51a6.61,6.61,0,0,0,4.06-.17c4.49-1.56,9-7.46,12.66-16.21,8.26,4.59,15.46,6.36,20,4.8a6.7,6.7,0,0,0,3.31-2.38c3.48-4.78,1.06-15.08-5.64-26.73,8.82-7.28,13.33-15.63,11.12-22ZM589.83,82.8c.28,2.75.43,5.63.49,8.54-1.22-1.34-2.47-2.67-3.78-4s-2.63-2.57-4-3.79a66.37,66.37,0,0,1,7.24-.77Zm-.2,23.55c-.35,3.1-.78,6.07-1.33,8.88a74.81,74.81,0,0,1-7.25,3c-2.47.86-5,1.58-7.48,2.18-2.17-1.87-4.36-3.91-6.55-6.1s-4.17-4.37-6.12-6.65c.1-3,.32-6,.65-9s.78-6.07,1.33-8.88a74.81,74.81,0,0,1,7.25-3c2.47-.86,5-1.58,7.48-2.18,2.17,1.87,4.36,3.91,6.55,6.1s4.17,4.37,6.12,6.65c-.11,3-.32,6-.65,9ZM594,102c1.8,2.33,3.46,4.71,5,7a66,66,0,0,1-6.18,3.91c.27-1.79.53-3.63.73-5.48s.35-3.67.48-5.48Zm-9.27,26.75c-2.18-1.36-4.43-2.94-6.73-4.72,1.5-.43,3-.89,4.54-1.42s3-1.1,4.49-1.71A79.16,79.16,0,0,1,584.74,128.71Zm-16.18-7.37a66.37,66.37,0,0,1-7.24.77c-.28-2.75-.43-5.63-.49-8.54,1.22,1.34,2.47,2.67,3.78,4S567.24,120.12,568.56,121.34ZM566.42,76.2c2.18,1.36,4.43,2.94,6.73,4.72-1.5.43-3,.89-4.54,1.42s-3,1.1-4.49,1.71A79.16,79.16,0,0,1,566.42,76.2ZM558.35,92c-.27,1.79-.53,3.63-.73,5.48s-.36,3.65-.48,5.46c-1.8-2.33-3.46-4.71-5-7A71.41,71.41,0,0,1,558.35,92Zm-6.23,29.77c-6.81-1-11.91-3.56-13-6.65s1.31-8.3,6.07-13.26A47.81,47.81,0,0,1,549,98.29,113.8,113.8,0,0,0,556.88,109a112.3,112.3,0,0,0,.51,13.18,47.13,47.13,0,0,1-5.27-.42Zm18.55,25.07c-2.75-.76-5.75-6.27-7.61-14-.46-1.91-.85-4-1.18-6.07A71,71,0,0,0,573,125.24a99.76,99.76,0,0,0,10.21,7.48c-3.25,7.81-7.12,12.81-10.52,14a3.58,3.58,0,0,1-2,.11Zm33.54-28.45c3.38,7.25,4.46,13.42,2.79,15.74a3.33,3.33,0,0,1-1.7,1.16c-3.38,1.17-9.52-.33-16.91-4.4a96.72,96.72,0,0,0,3.34-12.16,68.4,68.4,0,0,0,9.64-5.77C602.44,114.8,603.4,116.61,604.22,118.38Zm1.73-15.31a47.8,47.8,0,0,1-3.83,3.56,113.8,113.8,0,0,0-7.84-10.71,112.3,112.3,0,0,0-.51-13.18,49.18,49.18,0,0,1,5.29.41c6.81,1,11.91,3.56,13,6.65s-1.32,8.31-6.08,13.27Z',
             transform: 'translate(-111.96 -53.42)',
-            'data-jsx': 860039912
+            'data-jsx': 807499726
           }),
           u.default.createElement('ellipse', {
             className: 'b',
@@ -15815,60 +15733,60 @@ object-assign
             rx: '7.9',
             ry: '9.52',
             transform: 'matrix(0.94, -0.33, 0.33, 0.94, -113.72, 141.07)',
-            'data-jsx': 860039912
+            'data-jsx': 807499726
           }),
           u.default.createElement('path', {
             className: 'b',
             d: 'M576.92,53.84',
             transform: 'translate(-111.96 -53.42)',
-            'data-jsx': 860039912
+            'data-jsx': 807499726
           }),
           u.default.createElement('path', {
             className: 'a',
             d:
               'M485.31,129.28c-6-12.07-25.39-37.13-50.1-61.06-14-13.55-34.32-14.23-38.29-11.3s-4.74,6.44-4.83,7.92c-.17,2.67,0,5.6,1.67,7.27,2.64,2.63,9.17,7.4,9.67.73.2-2.71-2.82-.89-4.17-2.67C389.6,57.39,416.09,57.31,438.62,78A380.78,380.78,0,0,1,485.31,129.28Z',
             transform: 'translate(-111.96 -53.42)',
-            'data-jsx': 860039912
+            'data-jsx': 807499726
           }),
           u.default.createElement('path', {
             className: 'a',
             d:
               'M519,155.43s-47.81-39.67-177.55-33.33c-98.32,4.8-97.87,32.21-180.51,31.71-58.47-.35-48.92-21.89-47.58-33.38,1.45-12.41,1.16-21,13.81-29.92,5.4-3.79,23,.36,25.35,8.89,3.33,11.85.07,23.43-3.67,26.85-7.67,7-19.56-14.43-15.42-15.79,7.14-2.35,2.29,4.67,2.29,4.67l5.48,5.13s6.07-2.48,5.48-7.25l-.21-5.33c.25-2.18-2.46-9.37-4.29-10.58-2.27-1.5-11.24-1.91-13.83-.17-10.79,7.25-4.75,28.2-3.33,37.89s20.78,15,30.85,15.25c81.88,2,66.64-35.43,188.89-37.29C467.54,110.89,519,155.43,519,155.43Z',
             transform: 'translate(-111.96 -53.42)',
-            'data-jsx': 860039912
+            'data-jsx': 807499726
           }),
           u.default.createElement('path', {
             className: 'a',
             d:
               'M512.55,86c-3.83,2.05-4.89,4.78-5,6.43-.2,2.73,2.3,9.49,8.79,9.78,3.72.17,2.53-2.76,2.17-4.8-.27-1.48-4.55-2.12-3.76-.79a3.12,3.12,0,0,1,.33,2.88c-.14.34-.65.37-1,0-2.32-2-9.29-8.74.32-11.87,1.57-.51,11.34,5.59,12.31,7.06,1.13,1.7,1.55,1.16,3.34,7.73,1.38,5.06-.84-7.1-2.51-8.58C524.67,91.35,513.8,85.34,512.55,86Z',
             transform: 'translate(-111.96 -53.42)',
-            'data-jsx': 860039912
+            'data-jsx': 807499726
           }),
           u.default.createElement('path', {
             className: 'a',
             d:
               'M495.47,124.38c2-9.26,6.2-10.35,10.13-12.12,4.71-2.13,9.19-2.79,12.5-1.43,4.52,1.85,6.52,4.86,4.25,8.43-2.62,4.13-11.31-10.06-7.5,3.75.63,2.26,9.75,2.75,11.75-1.75,1.59-3.58,2.19-7.12-1.15-10.43s-10.83-4.41-13.48-4.95-11.19,4.76-14,6.63-5.31,8.94-6.37,10.5-7.12,13,12,25.25a87.39,87.39,0,0,0,44.67,13.3S489.16,152.9,495.47,124.38Z',
             transform: 'translate(-111.96 -53.42)',
-            'data-jsx': 860039912
+            'data-jsx': 807499726
           }),
           u.default.createElement('path', {
             className: 'a',
             d:
               'M502.47,75.82c-4.45,2.24-4.4,4.47-4.74,6.68-.4,2.65-.08,5,1.1,6.48,1.61,2,3.45,2.65,5,1,1.73-1.86-6.82-4.38.83-4.27,1.25,0,2.84,4.55.82,6.15-1.6,1.27-3.33,2-5.52.78s-3.85-4.88-4.52-6.14.8-6.26,1.35-7.91,3.81-3.84,4.46-4.58,5.63-5.28,14.72,2.75A46.64,46.64,0,0,1,529.3,97.56S516.19,68.93,502.47,75.82Z',
             transform: 'translate(-111.96 -53.42)',
-            'data-jsx': 860039912
+            'data-jsx': 807499726
           }),
           u.default.createElement('path', {
             className: 'a',
             d:
               'M473.84,120.25c-6.15-7.1-28.41-17.5-50.17-29.83-12.14-6.88-19.16-5.42-22.34-4s-5.52,4-6,5.58a5.91,5.91,0,0,0,1.17,5.33c.93,1.07,6,3.72,5.17-.92-.34-1.89-3.08.6-3.09-1,0-8.23,13.6-7.86,29.92,0C451.83,106.78,474.11,119.26,473.84,120.25Z',
             transform: 'translate(-111.96 -53.42)',
-            'data-jsx': 860039912
+            'data-jsx': 807499726
           }),
           u.default.createElement(a.default, {
-            styleId: 860039912,
+            styleId: 807499726,
             css:
-              '.filler[data-jsx="860039912"]{max-width:650px;margin:3em auto 6em auto;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:block}.a[data-jsx="860039912"]{fill:#231f20}.b[data-jsx="860039912"]{fill:#010101}'
+              '.filler[data-jsx="807499726"]{max-width:500px;margin:3em auto 6em auto;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:block}.a[data-jsx="807499726"]{fill:#231f20}.b[data-jsx="807499726"]{fill:#010101}'
           })
         )
       }
@@ -16102,20 +16020,21 @@ object-assign
       t.default = function(e) {
         return u.default.createElement(
           'div',
-          { className: 'link-container', 'data-jsx': 745012762 },
+          { className: 'link-container', 'data-jsx': 4058928978 },
           u.default.createElement(
             'a',
-            { href: e.href, className: 'link', 'data-jsx': 745012762 },
+            { href: e.href, className: 'link', 'data-jsx': 4058928978 },
             u.default.createElement(
               'span',
-              { 'data-jsx': 745012762 },
+              { 'data-jsx': 4058928978 },
               e.children
             ),
             ' →'
           ),
           u.default.createElement(a.default, {
-            styleId: 745012762,
-            css: 'span[data-jsx="745012762"]{text-decoration:underline}'
+            styleId: 4058928978,
+            css:
+              'span[data-jsx="4058928978"]{text-decoration:underline}.link-container[data-jsx="4058928978"]{margin-top:1em}'
           })
         )
       }
@@ -16153,7 +16072,7 @@ object-assign
           return u.default.createElement(
             'div',
             { className: 'section-part', 'data-jsx': 2022955690 },
-            u.default.createElement(c.Heading, null, e.title),
+            u.default.createElement(c.Heading, { id: e.id }, e.title),
             u.default.createElement(
               'div',
               { className: 'body', 'data-jsx': 2022955690 },
@@ -16171,18 +16090,18 @@ object-assign
         (c.Heading = function(e) {
           return u.default.createElement(
             'h2',
-            { className: 'heading', 'data-jsx': 787241716 },
+            { className: 'heading', 'data-jsx': 243852446 },
             u.default.createElement(
               'a',
-              { className: 'link', href: ['#' + e.id], 'data-jsx': 787241716 },
+              { className: e.link, href: ['#' + e.id], 'data-jsx': 243852446 },
               e.children
             ),
             u.default.createElement(a.default, {
-              styleId: 787241716,
+              styleId: 243852446,
               css:
-                '.heading[data-jsx="787241716"]{font-size:1.5em;margin:0 auto;width:100%;max-width:900px}.link[data-jsx="787241716"]{position:relative}.link[data-jsx="787241716"]:hover[data-jsx="787241716"]:before{content:\'\\1F517\';position:absolute;left:-1.5em}@media screen and (' +
+                '.heading[data-jsx="243852446"]{font-size:1.5em;margin:0 auto;width:100%;max-width:900px}.link-red[data-jsx="243852446"]{position:relative;border-bottom:solid 3px #c91f06;border-radius:50px 330px 525px 0px/25px 55px 25px 225px}.link-green[data-jsx="243852446"]{position:relative;border-bottom:solid 3px #3bad24;border-radius:50px 330px 325px 1px/225px 55px 25px 225px}.link[data-jsx="243852446"]:hover[data-jsx="243852446"]:before{content:\'\\1F517\';position:absolute;left:-1.5em}@media screen and (' +
                 l.default.large +
-                '){.heading[data-jsx="787241716"]{margin-bottom:1.5em;max-width:1650px}}'
+                '){.heading[data-jsx="243852446"]{margin-bottom:1.5em;max-width:1650px}}'
             })
           )
         }),
@@ -16664,17 +16583,17 @@ object-assign
                 value: function() {
                   return g.default.createElement(
                     'div',
-                    { className: 'video-container', 'data-jsx': 3299150804 },
+                    { className: 'video-container', 'data-jsx': 227657134 },
                     this.state.isVideoCover
                       ? g.default.createElement('img', {
                           src: this.props.img,
                           className: 'video-cover',
                           onClick: this._handleClick.bind(this),
-                          'data-jsx': 3299150804
+                          'data-jsx': 227657134
                         })
                       : g.default.createElement(
                           'div',
-                          { className: 'container', 'data-jsx': 3299150804 },
+                          { className: 'container', 'data-jsx': 227657134 },
                           g.default.createElement('iframe', {
                             className: 'frame',
                             width: '560',
@@ -16682,13 +16601,13 @@ object-assign
                             src: this.props.video,
                             frameBorder: '0',
                             allowFullScreen: !0,
-                            'data-jsx': 3299150804
+                            'data-jsx': 227657134
                           })
                         ),
                     g.default.createElement(m.default, {
-                      styleId: 3299150804,
+                      styleId: 227657134,
                       css:
-                        '.video-container[data-jsx="3299150804"]{text-align:center;margin:auto}.video-cover[data-jsx="3299150804"]{width:100%;max-width:498px;-webkit-align-self:center;-ms-flex-item-align:center;align-self:center}.container[data-jsx="3299150804"]{position:relative;width:100%;height:0;padding-bottom:56.25%}.frame[data-jsx="3299150804"]{position:absolute;top:0;left:0;height:100%;width:100%}'
+                        '.video-container[data-jsx="227657134"]{text-align:center;margin:auto}.video-cover[data-jsx="227657134"]{width:100%;max-width:498px;-webkit-align-self:center;-ms-flex-item-align:center;align-self:center;cursor:pointer}.container[data-jsx="227657134"]{position:relative;width:100%;height:0;padding-bottom:56.25%}.frame[data-jsx="227657134"]{position:absolute;top:0;left:0;height:100%;width:100%}'
                     })
                   )
                 }
@@ -17029,11 +16948,11 @@ object-assign
                     return y.default.createElement(
                       'html',
                       null,
-                      y.default.createElement(P, null),
+                      y.default.createElement(T, null),
                       y.default.createElement(
                         'body',
                         null,
-                        y.default.createElement(T, null),
+                        y.default.createElement(P, null),
                         y.default.createElement(N, null)
                       )
                     )
@@ -17062,7 +16981,7 @@ object-assign
         })(g.Component)
       ;(k.childContextTypes = { _documentProps: x.default.any }),
         (t.default = k)
-      var P = (t.Head = (function(e) {
+      var T = (t.Head = (function(e) {
         function t() {
           return (
             (0, c.default)(this, t),
@@ -17159,8 +17078,8 @@ object-assign
           t
         )
       })(g.Component))
-      P.contextTypes = { _documentProps: x.default.any }
-      var T = (t.Main = (function(e) {
+      T.contextTypes = { _documentProps: x.default.any }
+      var P = (t.Main = (function(e) {
         function t() {
           return (
             (0, c.default)(this, t),
@@ -17197,7 +17116,7 @@ object-assign
           t
         )
       })(g.Component))
-      T.contextTypes = { _documentProps: x.default.any }
+      P.contextTypes = { _documentProps: x.default.any }
       var N = (t.NextScript = (function(e) {
         function t() {
           return (
